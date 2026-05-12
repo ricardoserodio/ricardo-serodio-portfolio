@@ -4,6 +4,11 @@ import { projects } from "../data/projects.js";
 import { experience } from "../data/experience.js";
 import { skills } from "../data/skills.js";
 
+const linkedinUrl = "https://www.linkedin.com/in/rsbig/";
+const githubUrl = "https://github.com/ricardoserodio";
+const emailUrl = "mailto:contact@ricardoserodio.com";
+const cvUrl = "/cv/ricardo-serodio-cv.pdf";
+
 const careerFocus = [
   "Wealth Management",
   "Financial Research",
@@ -124,19 +129,28 @@ const currentYear = new Date().getFullYear();
               <div class="hero-actions">
                 <a
                   class="btn btn-primary"
-                  href="https://github.com/ricardoserodio"
+                  href={linkedinUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View LinkedIn
+                </a>
+
+                <a
+                  class="btn"
+                  href={githubUrl}
                   target="_blank"
                   rel="noreferrer"
                 >
                   View GitHub
                 </a>
 
-                <a class="btn" href="#projects">
-                  View Portfolio
+                <a class="btn" href={cvUrl}>
+                  Download CV
                 </a>
 
-                <a class="btn" href="#contact">
-                  Contact
+                <a class="btn" href="#projects">
+                  View Portfolio
                 </a>
               </div>
             </div>
@@ -360,19 +374,28 @@ const currentYear = new Date().getFullYear();
               <div class="contact-actions">
                 <a
                   class="btn"
-                  href="https://github.com/ricardoserodio"
+                  href={linkedinUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LinkedIn
+                </a>
+
+                <a
+                  class="btn"
+                  href={githubUrl}
                   target="_blank"
                   rel="noreferrer"
                 >
                   GitHub
                 </a>
 
-                <a class="btn" href="#" aria-label="LinkedIn profile to be added">
-                  LinkedIn soon
+                <a class="btn" href={emailUrl}>
+                  Email
                 </a>
 
-                <a class="btn" href="#" aria-label="Professional email to be added">
-                  Email soon
+                <a class="btn" href={cvUrl}>
+                  CV
                 </a>
               </div>
             </div>

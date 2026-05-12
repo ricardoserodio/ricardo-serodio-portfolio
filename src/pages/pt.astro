@@ -1,6 +1,11 @@
 ---
 import "../styles/global.css";
 
+const linkedinUrl = "https://www.linkedin.com/in/rsbig/";
+const githubUrl = "https://github.com/ricardoserodio";
+const emailUrl = "mailto:contact@ricardoserodio.com";
+const cvUrl = "/cv/ricardo-serodio-cv.pdf";
+
 const careerFocus = [
   "Wealth Management",
   "Financial Research",
@@ -275,19 +280,28 @@ const currentYear = new Date().getFullYear();
               <div class="hero-actions">
                 <a
                   class="btn btn-primary"
-                  href="https://github.com/ricardoserodio"
+                  href={linkedinUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Ver LinkedIn
+                </a>
+
+                <a
+                  class="btn"
+                  href={githubUrl}
                   target="_blank"
                   rel="noreferrer"
                 >
                   Ver GitHub
                 </a>
 
-                <a class="btn" href="#projects">
-                  Ver Portefólio
+                <a class="btn" href={cvUrl}>
+                  Descarregar CV
                 </a>
 
-                <a class="btn" href="#contact">
-                  Contacto
+                <a class="btn" href="#projects">
+                  Ver Portefólio
                 </a>
               </div>
             </div>
@@ -513,19 +527,28 @@ const currentYear = new Date().getFullYear();
               <div class="contact-actions">
                 <a
                   class="btn"
-                  href="https://github.com/ricardoserodio"
+                  href={linkedinUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LinkedIn
+                </a>
+
+                <a
+                  class="btn"
+                  href={githubUrl}
                   target="_blank"
                   rel="noreferrer"
                 >
                   GitHub
                 </a>
 
-                <a class="btn" href="#" aria-label="Perfil LinkedIn a adicionar">
-                  LinkedIn em breve
+                <a class="btn" href={emailUrl}>
+                  Email
                 </a>
 
-                <a class="btn" href="#" aria-label="Email profissional a adicionar">
-                  Email em breve
+                <a class="btn" href={cvUrl}>
+                  CV
                 </a>
               </div>
             </div>
