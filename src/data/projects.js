@@ -3,7 +3,7 @@ export const projects = [
     name: "Portugal Term Deposit Comparator",
     status: "Live / Public Portfolio Project",
     description:
-      "Banking analytics and financial product comparison project built with Python, Streamlit and pandas. Compares Portuguese term deposits by estimated net yield, maturity, eligibility criteria, liquidity conditions and official-source validation status, with source mapping and data quality checks.",
+      "Banking analytics and financial product comparison project built with Python, Streamlit and pandas. Compares Portuguese term deposits by estimated net yield, maturity, eligibility criteria, liquidity conditions and official source validation status, with source mapping and data quality checks.",
     skills: [
       "Python",
       "Streamlit",
