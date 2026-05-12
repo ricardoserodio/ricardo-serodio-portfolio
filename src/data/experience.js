@@ -14,15 +14,16 @@ export const experience = [
   },
   {
     company: "Banco BiG",
-    role: "Personal Wealth Management",
+    role: "Client Manager – Personal Wealth Management",
     period: "2023 – 2025",
     description:
-      "Experience in wealth management, investment advisory support, financial products, MiFID II context, stakeholder communication and client-facing banking workflows.",
+      "Client-facing wealth management role in an investment banking environment, covering investment advisory under the MiFID II framework, portfolio construction, asset allocation, financial products, client relationship management, market monitoring, onboarding processes and regulated advisory workflows.",
     highlights: [
-      "Worked in a wealth management and investment-oriented banking environment.",
-      "Developed exposure to financial products, client portfolios and regulated advisory workflows.",
-      "Strengthened knowledge of MiFID II, AML/KYC and client documentation processes.",
-      "Built communication skills with clients, internal teams and financial stakeholders.",
+      "Delivered investment advisory support under the MiFID II framework, helping clients align portfolios with risk profiles, investment objectives and financial needs.",
+      "Supported portfolio construction and asset allocation across equities, fixed income instruments and investment products.",
+      "Managed and developed client relationships within a personal wealth management environment, strengthening communication, trust and retention.",
+      "Monitored financial markets, investment products and client portfolios, supporting informed discussions and investment decision-making.",
+      "Supported client onboarding, documentation review and account setup processes with attention to regulatory compliance and operational accuracy.",
     ],
   },
 ];
