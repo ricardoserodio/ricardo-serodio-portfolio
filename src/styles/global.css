@@ -914,3 +914,22 @@ p {
 #career-focus .section-header h2 {
   max-width: 820px;
 }
+/* Final desktop polish for section headers */
+@media (min-width: 761px) {
+  #certifications .section-header,
+  #career-focus .section-header {
+    display: block;
+    max-width: 920px;
+    margin-bottom: 2rem;
+  }
+
+  #certifications .section-header .eyebrow,
+  #career-focus .section-header .eyebrow {
+    margin-bottom: 0.85rem;
+  }
+
+  #certifications .section-header h2,
+  #career-focus .section-header h2 {
+    max-width: 900px;
+  }
+}
