@@ -2,12 +2,23 @@ export const skills = [
   {
     group: "Banking & Finance",
     items: [
-      "Retail Banking",
+      "Retail Banking Operations",
       "Wealth Management",
       "Investment Advisory Support",
       "Financial Products",
-      "Credit Processes",
-      "Banking Operations",
+      "Savings & Investment-related Products",
+      "Insurance Products",
+    ],
+  },
+  {
+    group: "Credit & Client Operations",
+    items: [
+      "Credit Cards",
+      "Consumer Credit",
+      "Mortgage Credit",
+      "Non-mortgage Lending Processes",
+      "Client Requests",
+      "Branch Banking Workflows",
     ],
   },
   {
@@ -28,7 +39,7 @@ export const skills = [
       "KYC/CDD",
       "MiFID II",
       "Documentation Review",
-      "Process Improvement",
+      "Regulated Banking Workflows",
       "Stakeholder Communication",
     ],
   },
