@@ -1,17 +1,391 @@
 ---
+import "../styles/global.css";
+import { projects } from "../data/projects.js";
+import { experience } from "../data/experience.js";
+import { skills } from "../data/skills.js";
 
+const careerFocus = [
+  "Wealth Management",
+  "Financial Research",
+  "Banking Analytics",
+  "Financial Data Quality",
+  "Business / Program Operations",
+  "Fintech / Product Operations",
+  "AI Finance / AI Product Testing",
+  "AML / KYC / Client Onboarding",
+];
+
+const certifications = [
+  {
+    name: "Capital Markets & Securities Analyst (CMSA®)",
+    provider: "Corporate Finance Institute (CFI)",
+    status: "Completed",
+    url: "/certificates/cmsa-cfi.pdf",
+  },
+  {
+    name: "Financial Planning & Wealth Management",
+    provider: "Corporate Finance Institute (CFI)",
+    status: "Completed",
+    url: "/certificates/financial-planning-wealth-management-cfi.pdf",
+  },
+  {
+    name: "Economics for Capital Markets",
+    provider: "Corporate Finance Institute (CFI)",
+    status: "Completed",
+    url: "/certificates/economics-for-capital-markets-cfi.pdf",
+  },
+  {
+    name: "AML/CFT & Sanctions",
+    provider: "PwC Portugal",
+    status: "Completed",
+    url: "/certificates/aml-cft-sanctions-pwc.pdf",
+  },
+  {
+    name: "MiFID II – Investment Advisory & Information Provision",
+    provider: "IFB",
+    status: "Completed",
+    url: "/certificates/mifid-ii-ifb.pdf",
+  },
+  {
+    name: "Mortgage Credit Commercialization",
+    provider: "IFB",
+    status: "Completed",
+    url: "/certificates/mortgage-credit-commercialization-ifb.pdf",
+  },
+  {
+    name: "Insurance Intermediation – Life & Non-Life",
+    provider: "DLC / Insurance Training",
+    status: "Completed",
+    url: "/certificates/insurance-intermediation.pdf",
+  },
+];
+
+const learningRoadmap = [
+  "Financial Modeling & Valuation Analyst (FMVA®) — planned",
+  "Bloomberg Market Concepts (BMC) — planned",
+  "Power BI / PL-300 — in progress",
+  "SQL for Data Analysis — in progress",
+  "Python for Finance — in progress",
+  "GitHub Portfolio Development — in progress",
+];
+
+const currentYear = new Date().getFullYear();
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Ricardo Serôdio | Banking Operations & Financial Data Quality</title>
+    <meta
+      name="description"
+      content="Professional portfolio website for Ricardo Serôdio, focused on banking operations, wealth management, financial data quality, banking analytics and AI finance."
+    />
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="header">
+        <nav class="container nav" aria-label="Main navigation">
+          <a class="logo" href="#">Ricardo Serôdio</a>
+
+          <div class="nav-links">
+            <a href="#summary">Summary</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact">Contact</a>
+            <a class="lang-switch" href="/pt">EN | PT</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="container hero-grid">
+            <div>
+              <div class="eyebrow">
+                Public Professional Portfolio
+              </div>
+
+              <h1 class="hero-title">
+                Ricardo <span>Serôdio</span>
+              </h1>
+
+              <p class="hero-subtitle">
+                Banking Operations | Wealth Management | Financial Data Quality | Banking Analytics
+              </p>
+
+              <p class="location">
+                Olhão, Portugal · Open to remote, hybrid and international opportunities across Europe and selected global remote roles.
+              </p>
+
+              <div class="hero-actions">
+                <a
+                  class="btn btn-primary"
+                  href="https://github.com/ricardoserodio"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View GitHub
+                </a>
+
+                <a class="btn" href="#projects">
+                  View Portfolio
+                </a>
+
+                <a class="btn" href="#contact">
+                  Contact
+                </a>
+              </div>
+            </div>
+
+            <aside class="hero-card" aria-label="Professional narrative">
+              <div class="hero-card-title">Core Narrative</div>
+
+              <ul class="hero-card-list">
+                <li>Banking experience</li>
+                <li>Financial data quality</li>
+                <li>Banking analytics</li>
+                <li>Public portfolio</li>
+                <li>International career focus</li>
+              </ul>
+            </aside>
+          </div>
+        </section>
+
+        <section id="summary" class="section">
+          <div class="container">
+            <div class="section-header">
+              <div>
+                <div class="section-kicker">Professional Summary</div>
+                <h2>Finance background with a data-driven portfolio direction.</h2>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <p>
+                Banking operations and wealth management professional with experience in regulated financial services,
+                financial products, credit processes, AML/KYC, MiFID II, documentation review, stakeholder communication
+                and client data validation. Currently building a public portfolio focused on financial data quality,
+                banking analytics, SQL, Power BI, Python for Finance and responsible AI use in financial workflows.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" class="section">
+          <div class="container">
+            <div class="section-header">
+              <div>
+                <div class="section-kicker">Experience</div>
+                <h2>Banking and regulated financial environments.</h2>
+              </div>
+
+              <p class="section-intro">
+                Experience across retail banking operations, wealth management, financial products, client documentation,
+                regulated workflows and stakeholder communication.
+              </p>
+            </div>
+
+            <div class="grid grid-2">
+              {experience.map((item) => (
+                <article class="card">
+                  <h3>{item.company}</h3>
+                  <div class="meta">{item.role} · {item.period}</div>
+                  <p>{item.description}</p>
+
+                  <ul class="bullet-list">
+                    {item.highlights.map((highlight) => (
+                      <li>{highlight}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="section">
+          <div class="container">
+            <div class="section-header">
+              <div>
+                <div class="section-kicker">Portfolio Projects</div>
+                <h2>Public work connecting finance, data quality and analytics.</h2>
+              </div>
+
+              <p class="section-intro">
+                Selected public or portfolio-ready projects designed to demonstrate practical finance knowledge,
+                structured analysis, data validation and responsible use of technology in financial workflows.
+              </p>
+            </div>
+
+            <div class="grid grid-2">
+              {projects.map((project) => (
+                <article class="card">
+                  <div class="status">{project.status}</div>
+                  <h3>{project.name}</h3>
+                  <p>{project.description}</p>
+
+                  <div class="tags">
+                    {project.skills.map((skill) => (
+                      <span class="tag">{skill}</span>
+                    ))}
+                  </div>
+
+                  <div class="card-actions">
+                    {project.github && (
+                      <a class="card-link" href={project.github} target="_blank" rel="noreferrer">
+                        GitHub →
+                      </a>
+                    )}
+
+                    {project.live && (
+                      <a class="card-link" href={project.live} target="_blank" rel="noreferrer">
+                        Live App →
+                      </a>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" class="section">
+          <div class="container">
+            <div class="section-header">
+              <div>
+                <div class="section-kicker">Skills</div>
+                <h2>Finance, operations, data quality and analytics.</h2>
+              </div>
+            </div>
+
+            <div class="grid grid-3">
+              {skills.map((skillGroup) => (
+                <article class="card skill-group">
+                  <h3>{skillGroup.group}</h3>
+
+                  <ul class="skill-list">
+                    {skillGroup.items.map((skill) => (
+                      <li>{skill}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="certifications" class="section">
+          <div class="container">
+            <div class="section-header">
+              <div>
+                <div class="section-kicker">Certifications & Learning</div>
+                <h2>
+                  Certifications across capital markets, wealth management, compliance and banking analytics.
+                </h2>
+              </div>
+
+              <p class="section-intro">
+                Completed certifications and selected learning priorities supporting a career path across banking,
+                financial research, data quality, business intelligence and AI-assisted finance workflows.
+              </p>
+            </div>
+
+            <div class="summary-card certifications-block">
+              <h3>Completed Certifications</h3>
+
+              <div class="focus-list">
+                {certifications.map((item) => (
+                  <a
+                    class="focus-item"
+                    href={item.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    title={`${item.name} – ${item.provider}`}
+                  >
+                    {item.name} — {item.provider}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div class="summary-card certifications-block">
+              <h3>Selected Learning Roadmap</h3>
+
+              <div class="focus-list">
+                {learningRoadmap.map((item) => (
+                  <span class="focus-item">{item}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section-header">
+              <div>
+                <div class="section-kicker">Career Focus</div>
+                <h2>International opportunities across finance, data and operations.</h2>
+              </div>
+
+              <p class="section-intro">
+                Open to roles where banking experience, financial product understanding, data quality awareness and
+                analytical thinking can support regulated, data-driven or AI-assisted financial workflows.
+              </p>
+            </div>
+
+            <div class="focus-list">
+              {careerFocus.map((item) => (
+                <span class="focus-item">{item}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section">
+          <div class="container">
+            <div class="contact-box">
+              <div>
+                <div class="section-kicker">Contact</div>
+                <h2>Let’s connect.</h2>
+                <p>
+                  Based in Olhão, Portugal. Open to remote, hybrid and international opportunities across Europe and selected global remote roles.
+                </p>
+              </div>
+
+              <div class="contact-actions">
+                <a
+                  class="btn"
+                  href="https://github.com/ricardoserodio"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub
+                </a>
+
+                <a class="btn" href="#" aria-label="LinkedIn profile to be added">
+                  LinkedIn soon
+                </a>
+
+                <a class="btn" href="#" aria-label="Professional email to be added">
+                  Email soon
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer-inner">
+          <span>© {currentYear} Ricardo Serôdio. Professional Portfolio.</span>
+          <span>Banking experience · Financial data quality · Banking analytics · Public portfolio</span>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
