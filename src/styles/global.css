@@ -1,36 +1,81 @@
+/* ==========================================================================
+   Ricardo Serôdio — Professional Portfolio Website
+   Clean consolidated global styles
+   Visual direction: premium finance · executive portfolio · private banking
+   Palette restored from the first preferred version
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Design tokens
+   -------------------------------------------------------------------------- */
+
 :root {
   --bg: #f6f3ee;
+  --bg-soft: #fbfaf7;
   --surface: #ffffff;
   --surface-soft: #fbfaf7;
+
   --text: #151515;
-  --muted: #666666;
+  --text-soft: #353535;
+  --text-muted: #666666;
+
   --border: #ded8cf;
+  --border-soft: rgba(222, 216, 207, 0.75);
+  --border-accent: rgba(29, 53, 87, 0.3);
+
   --accent: #1d3557;
+  --accent-dark: #162a45;
   --accent-soft: #e8eef5;
+
   --gold: #b08d57;
+  --gold-dark: #8f6f3f;
+  --gold-soft: rgba(176, 141, 87, 0.14);
+
+  --dark: #121826;
+
+  --radius-sm: 14px;
   --radius: 18px;
+  --radius-lg: 28px;
+
   --shadow: 0 18px 50px rgba(20, 20, 20, 0.08);
+  --shadow-soft: 0 12px 35px rgba(20, 20, 20, 0.055);
+  --shadow-strong: 0 24px 70px rgba(20, 20, 20, 0.12);
+
   --max-width: 1120px;
+  --container-padding: 2rem;
+  --section-spacing: 4.5rem;
 }
 
-* {
+/* --------------------------------------------------------------------------
+   Reset
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html {
+  min-width: 320px;
   scroll-behavior: smooth;
+  background: var(--bg);
 }
 
 body {
   margin: 0;
+  min-width: 320px;
+  color: var(--text);
   background:
     radial-gradient(circle at top left, rgba(176, 141, 87, 0.14), transparent 34rem),
     linear-gradient(180deg, #f8f5f0 0%, #f6f3ee 45%, #f1ede6 100%);
-  color: var(--text);
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+    Roboto, Arial, sans-serif;
+  font-size: 16px;
   line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -38,16 +83,67 @@ a {
   text-decoration: none;
 }
 
-.page {
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+::selection {
+  color: #ffffff;
+  background: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   Page and containers
+   -------------------------------------------------------------------------- */
+
+.page,
+.site-shell {
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-.container {
-  width: min(100% - 2rem, var(--max-width));
-  margin: 0 auto;
+.container,
+.section-inner,
+.hero-inner,
+.hero-grid,
+.footer-inner,
+.nav,
+.navbar,
+.header-inner {
+  width: min(100% - var(--container-padding), var(--max-width));
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.header {
+/* --------------------------------------------------------------------------
+   Header
+   -------------------------------------------------------------------------- */
+
+.header,
+.site-header {
   position: sticky;
   top: 0;
   z-index: 20;
@@ -56,31 +152,63 @@ a {
   border-bottom: 1px solid rgba(222, 216, 207, 0.8);
 }
 
-.nav {
-  height: 72px;
+.nav,
+.navbar,
+.header-inner {
+  min-height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
 }
 
-.logo {
+.logo,
+.brand {
+  color: var(--text);
   font-weight: 750;
   letter-spacing: -0.04em;
   font-size: 1.05rem;
+}
+
+.logo span,
+.brand span {
+  display: block;
+  margin-top: 0.1rem;
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
   gap: 1rem;
-  color: var(--muted);
+  color: var(--text-muted);
   font-size: 0.94rem;
+  font-weight: 650;
+}
+
+.nav-links a {
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
 }
 
 .nav-links a:hover {
   color: var(--text);
+  transform: translateY(-1px);
 }
 
+.lang-switch,
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.lang-switch a,
+.language-switch a,
 .lang-switch {
   border: 1px solid var(--border);
   padding: 0.45rem 0.75rem;
@@ -90,18 +218,49 @@ a {
   font-weight: 600;
 }
 
+/* --------------------------------------------------------------------------
+   Typography
+   -------------------------------------------------------------------------- */
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+
+strong {
+  color: var(--text);
+  font-weight: 760;
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Hero
+   -------------------------------------------------------------------------- */
+
 .hero {
   padding: 6.5rem 0 4.5rem;
 }
 
-.hero-grid {
+.hero-grid,
+.hero-inner {
   display: grid;
-  grid-template-columns: 1.45fr 0.8fr;
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.8fr);
   gap: 2rem;
   align-items: center;
 }
 
-.eyebrow {
+.hero-content {
+  max-width: 820px;
+}
+
+.eyebrow,
+.hero-kicker {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -114,87 +273,161 @@ a {
   font-weight: 650;
 }
 
-h1,
-h2,
-h3 {
-  margin: 0;
-  line-height: 1.1;
-  letter-spacing: -0.045em;
-}
-
-h1 {
+.hero h1,
+.hero-title {
   margin-top: 1.2rem;
+  margin-bottom: 0;
+  color: var(--text);
   font-size: clamp(3rem, 8vw, 5.8rem);
+  line-height: 1;
+  letter-spacing: -0.065em;
 }
 
-.hero-title span {
+.hero-title span,
+.hero h1 span {
   color: var(--accent);
 }
 
-.hero-subtitle {
+.hero-subtitle,
+.hero-lead {
   margin: 1.35rem 0 0;
   max-width: 760px;
   color: #3d3d3d;
   font-size: clamp(1.08rem, 2vw, 1.35rem);
+  line-height: 1.55;
 }
 
-.location {
+.location,
+.hero-location {
   margin-top: 1rem;
-  color: var(--muted);
+  color: var(--text-muted);
   font-weight: 550;
 }
 
-.hero-actions {
+.hero-actions,
+.actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
   margin-top: 2rem;
 }
 
-.btn {
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+
+.btn,
+.button,
+.cta-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 46px;
   border-radius: 999px;
   padding: 0.82rem 1.1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   border: 1px solid var(--border);
   background: var(--surface);
+  color: var(--text);
   transition:
     transform 160ms ease,
     box-shadow 160ms ease,
-    border-color 160ms ease;
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease;
 }
 
-.btn:hover {
+.btn:hover,
+.button:hover,
+.cta-button:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow);
-  border-color: rgba(29, 53, 87, 0.3);
+  border-color: var(--border-accent);
 }
 
-.btn-primary {
+.btn-primary,
+.button-primary,
+.cta-primary {
   background: var(--accent);
-  color: white;
+  color: #ffffff;
   border-color: var(--accent);
+  box-shadow: 0 12px 30px rgba(29, 53, 87, 0.18);
 }
 
-.hero-card {
+.btn-primary:hover,
+.button-primary:hover,
+.cta-primary:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  box-shadow: 0 18px 42px rgba(29, 53, 87, 0.22);
+}
+
+.btn-secondary,
+.button-secondary,
+.cta-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn-secondary:hover,
+.button-secondary:hover,
+.cta-secondary:hover {
+  color: var(--accent);
+  border-color: var(--border-accent);
+}
+
+/* --------------------------------------------------------------------------
+   Hero card / core narrative
+   -------------------------------------------------------------------------- */
+
+.hero-card,
+.profile-card {
+  position: relative;
+  overflow: hidden;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--border);
-  border-radius: 28px;
+  border-radius: var(--radius-lg);
   padding: 1.5rem;
   box-shadow: var(--shadow);
 }
 
-.hero-card-title {
-  color: var(--muted);
+.hero-card::before,
+.profile-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1.6rem;
+  right: 1.6rem;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--gold), var(--accent), transparent);
+}
+
+.hero-card > *,
+.profile-card > * {
+  position: relative;
+}
+
+.hero-card-title,
+.profile-name {
+  color: var(--text-muted);
   font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
-.hero-card-list {
+.profile-role {
+  margin-top: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.hero-card-list,
+.profile-list,
+.hero-highlights {
   margin: 1rem 0 0;
   padding: 0;
   list-style: none;
@@ -202,16 +435,27 @@ h1 {
   gap: 0.75rem;
 }
 
-.hero-card-list li {
+.hero-card-list li,
+.profile-list li,
+.hero-highlights li {
   padding: 0.9rem 1rem;
-  border-radius: 14px;
+  border-radius: var(--radius-sm);
   background: var(--surface-soft);
   border: 1px solid rgba(222, 216, 207, 0.8);
+  color: var(--text);
   font-weight: 650;
 }
 
+/* --------------------------------------------------------------------------
+   Sections
+   -------------------------------------------------------------------------- */
+
 .section {
-  padding: 4.5rem 0;
+  padding: var(--section-spacing) 0;
+}
+
+.section + .section {
+  border-top: 1px solid rgba(222, 216, 207, 0.65);
 }
 
 .section-header {
@@ -222,7 +466,8 @@ h1 {
   margin-bottom: 1.7rem;
 }
 
-.section-kicker {
+.section-kicker,
+.section-eyebrow {
   color: var(--gold);
   font-size: 0.83rem;
   text-transform: uppercase;
@@ -230,18 +475,30 @@ h1 {
   font-weight: 800;
 }
 
-.section h2 {
+.section h2,
+.section-title {
   margin-top: 0.4rem;
+  color: var(--text);
   font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
 }
 
-.section-intro {
+.section-intro,
+.section-description {
   max-width: 720px;
-  color: var(--muted);
+  color: var(--text-muted);
   font-size: 1.04rem;
+  line-height: 1.65;
 }
 
-.summary-card {
+/* --------------------------------------------------------------------------
+   Professional summary
+   -------------------------------------------------------------------------- */
+
+.summary-card,
+.professional-summary,
+.summary-grid {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -249,58 +506,181 @@ h1 {
   box-shadow: var(--shadow);
 }
 
-.summary-card p {
+.summary-card p,
+.professional-summary p,
+.summary-grid p {
   margin: 0;
   font-size: 1.08rem;
   color: #353535;
 }
+
+.summary-card p + p,
+.professional-summary p + p,
+.summary-grid p + p {
+  margin-top: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Generic grids
+   -------------------------------------------------------------------------- */
 
 .grid {
   display: grid;
   gap: 1rem;
 }
 
-.grid-2 {
+.grid-2,
+.projects-grid,
+.project-grid,
+.certifications-grid,
+.certification-grid,
+.learning-grid {
+  display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
 }
 
-.grid-3 {
+.grid-3,
+.skills-grid,
+.skill-grid,
+.focus-grid,
+.career-focus-grid {
+  display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
 }
 
-.card {
+/* --------------------------------------------------------------------------
+   Cards
+   -------------------------------------------------------------------------- */
+
+.card,
+.info-card,
+.experience-card,
+.project-card,
+.skill-card,
+.certification-card,
+.learning-card,
+.focus-card {
   background: rgba(255, 255, 255, 0.78);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.35rem;
-  box-shadow: 0 12px 35px rgba(20, 20, 20, 0.055);
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
 }
 
-.card h3 {
+.card:hover,
+.info-card:hover,
+.experience-card:hover,
+.project-card:hover,
+.skill-card:hover,
+.certification-card:hover,
+.learning-card:hover,
+.focus-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--border-accent);
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.card h3,
+.info-card h3,
+.experience-card h3,
+.project-card h3,
+.skill-card h3,
+.certification-card h3,
+.learning-card h3,
+.focus-card h3 {
+  color: var(--text);
   font-size: 1.25rem;
+  line-height: 1.18;
+  letter-spacing: -0.035em;
 }
 
-.meta {
-  color: var(--muted);
+.card p,
+.info-card p,
+.experience-card p,
+.project-card p,
+.skill-card p,
+.certification-card p,
+.learning-card p,
+.focus-card p {
+  color: #444444;
+}
+
+.meta,
+.experience-meta,
+.certification-meta,
+.learning-meta {
+  color: var(--text-muted);
   font-weight: 650;
   margin-top: 0.35rem;
 }
 
-.card p {
-  color: #444444;
+/* --------------------------------------------------------------------------
+   Experience
+   -------------------------------------------------------------------------- */
+
+.experience-list,
+.timeline {
+  display: grid;
+  gap: 1rem;
 }
 
-.bullet-list {
+.experience-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.34fr) minmax(0, 0.66fr);
+  gap: 1.35rem;
+}
+
+.experience-company {
+  color: var(--text);
+  font-weight: 750;
+}
+
+.experience-period,
+.experience-location {
+  color: var(--text-muted);
+}
+
+.bullet-list,
+.experience-content ul,
+.project-card ul,
+.certification-card ul,
+.learning-card ul,
+.focus-card ul {
   margin: 1rem 0 0;
   padding-left: 1.1rem;
   color: #424242;
 }
 
-.bullet-list li + li {
+.bullet-list li + li,
+.experience-content li + li,
+.project-card li + li,
+.certification-card li + li,
+.learning-card li + li,
+.focus-card li + li {
   margin-top: 0.45rem;
 }
 
-.status {
+/* --------------------------------------------------------------------------
+   Projects
+   -------------------------------------------------------------------------- */
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.status,
+.project-status,
+.badge {
   display: inline-flex;
   width: fit-content;
   margin-bottom: 0.9rem;
@@ -308,18 +688,24 @@ h1 {
   border-radius: 999px;
   background: var(--accent-soft);
   color: var(--accent);
+  border: 1px solid rgba(29, 53, 87, 0.12);
   font-size: 0.8rem;
   font-weight: 750;
 }
 
-.tags {
+.tags,
+.project-tech,
+.tech-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
   margin-top: 1rem;
 }
 
-.tag {
+.tag,
+.tags span,
+.project-tech span,
+.tech-list span {
   border: 1px solid var(--border);
   background: var(--surface-soft);
   border-radius: 999px;
@@ -329,48 +715,95 @@ h1 {
   font-weight: 650;
 }
 
-.card-actions {
+.card-actions,
+.project-links {
   display: flex;
   gap: 0.65rem;
-  margin-top: 1.1rem;
+  margin-top: auto;
+  padding-top: 1.1rem;
   flex-wrap: wrap;
 }
 
-.card-link {
+.card-link,
+.text-link {
   font-weight: 750;
   color: var(--accent);
-}
-
-.card-link:hover {
   text-decoration: underline;
+  text-decoration-thickness: 1px;
   text-underline-offset: 4px;
 }
 
-.skill-group h3 {
+/* --------------------------------------------------------------------------
+   Skills
+   -------------------------------------------------------------------------- */
+
+.skill-group h3,
+.skill-card h3 {
   margin-bottom: 0.8rem;
 }
 
-.skill-list {
-  margin: 0;
+.skill-list,
+.skill-card ul {
+  margin: 0.9rem 0 0;
   padding: 0;
   list-style: none;
   display: grid;
   gap: 0.55rem;
 }
 
-.skill-list li {
+.skill-list li,
+.skill-card li {
   color: #3f3f3f;
   border-bottom: 1px solid rgba(222, 216, 207, 0.75);
   padding-bottom: 0.55rem;
 }
 
-.certifications-block {
-  margin-bottom: 1rem;
+/* --------------------------------------------------------------------------
+   Certifications & Learning
+   -------------------------------------------------------------------------- */
+
+.certification-card,
+.learning-card {
+  position: relative;
+  padding: 1.45rem;
 }
 
-.certifications-block h3 {
-  margin-bottom: 1rem;
+.certification-card::before,
+.learning-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1.35rem;
+  right: 1.35rem;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--gold), var(--accent), transparent);
 }
+
+.certification-card > *,
+.learning-card > * {
+  position: relative;
+}
+
+.certification-meta,
+.learning-meta {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 0.75rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(176, 141, 87, 0.12);
+  color: var(--gold-dark);
+  border: 1px solid rgba(176, 141, 87, 0.25);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   Career focus
+   -------------------------------------------------------------------------- */
 
 .focus-list {
   display: flex;
@@ -385,31 +818,34 @@ h1 {
   border: 1px solid var(--border);
   font-weight: 700;
   color: #333333;
-  transition:
-    transform 160ms ease,
-    border-color 160ms ease,
-    box-shadow 160ms ease;
 }
 
-a.focus-item:hover {
-  transform: translateY(-2px);
-  border-color: rgba(29, 53, 87, 0.28);
-  box-shadow: 0 10px 30px rgba(20, 20, 20, 0.07);
-  color: var(--accent);
-}
+/* --------------------------------------------------------------------------
+   Contact
+   -------------------------------------------------------------------------- */
 
-.contact-box {
-  background: #121826;
-  color: white;
-  border-radius: 28px;
+.contact-box,
+.contact-card {
+  background: var(--dark);
+  color: #ffffff;
+  border-radius: var(--radius-lg);
   padding: 2rem;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 2rem;
   align-items: center;
+  box-shadow: var(--shadow-strong);
 }
 
-.contact-box p {
+.contact-box h2,
+.contact-box h3,
+.contact-card h2,
+.contact-card h3 {
+  color: #ffffff;
+}
+
+.contact-box p,
+.contact-card p {
   color: rgba(255, 255, 255, 0.72);
 }
 
@@ -420,20 +856,41 @@ a.focus-item:hover {
   justify-content: flex-end;
 }
 
-.contact-actions .btn {
+.contact-actions .btn,
+.contact-actions .button,
+.contact-actions .cta-button,
+.contact-card .btn,
+.contact-card .button,
+.contact-card .cta-button,
+.contact-box .btn,
+.contact-box .button,
+.contact-box .cta-button {
   background: rgba(255, 255, 255, 0.08);
-  color: white;
+  color: #ffffff;
   border-color: rgba(255, 255, 255, 0.18);
 }
 
-.contact-actions .btn:hover {
-  border-color: rgba(255, 255, 255, 0.36);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+.contact-actions .btn:hover,
+.contact-actions .button:hover,
+.contact-actions .cta-button:hover,
+.contact-card .btn:hover,
+.contact-card .button:hover,
+.contact-card .cta-button:hover,
+.contact-box .btn:hover,
+.contact-box .button:hover,
+.contact-box .cta-button:hover {
+  border-color: rgba(255, 255, 255, 0.34);
+  background: rgba(255, 255, 255, 0.13);
 }
 
-.footer {
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+.footer,
+.site-footer {
   padding: 2rem 0;
-  color: var(--muted);
+  color: var(--text-muted);
   font-size: 0.92rem;
   border-top: 1px solid var(--border);
 }
@@ -445,9 +902,50 @@ a.focus-item:hover {
   flex-wrap: wrap;
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+  .hero-grid,
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card,
+  .profile-card {
+    max-width: 760px;
+  }
+
+  .grid-3,
+  .skills-grid,
+  .skill-grid,
+  .focus-grid,
+  .career-focus-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 860px) {
-  .nav {
-    height: auto;
+  :root {
+    --container-padding: 1.5rem;
+    --section-spacing: 3.7rem;
+  }
+
+  .nav,
+  .navbar,
+  .header-inner {
+    min-height: auto;
     padding: 1rem 0;
     align-items: flex-start;
     gap: 0.8rem;
@@ -461,10 +959,18 @@ a.focus-item:hover {
     padding: 4rem 0 3rem;
   }
 
-  .hero-grid,
   .grid-2,
-  .grid-3,
-  .contact-box {
+  .projects-grid,
+  .project-grid,
+  .certifications-grid,
+  .certification-grid,
+  .learning-grid,
+  .contact-box,
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-card {
     grid-template-columns: 1fr;
   }
 
@@ -475,47 +981,343 @@ a.focus-item:hover {
   .section-header {
     display: block;
   }
-
-  .section-intro {
-    margin-top: 1rem;
-  }
 }
 
-@media (max-width: 520px) {
-  .container {
-    width: min(100% - 1.2rem, var(--max-width));
+@media (max-width: 640px) {
+  :root {
+    --container-padding: 1.2rem;
   }
 
-  h1 {
-    font-size: clamp(2.7rem, 15vw, 4rem);
+  body {
+    font-size: 15.5px;
+  }
+
+  .hero h1,
+  .hero-title {
+    font-size: clamp(2.7rem, 14vw, 4rem);
   }
 
   .hero-actions,
   .card-actions,
+  .project-links,
   .contact-actions {
     flex-direction: column;
   }
 
-  .btn {
+  .btn,
+  .button,
+  .cta-button {
     width: 100%;
+  }
+
+  .grid-3,
+  .skills-grid,
+  .skill-grid,
+  .focus-grid,
+  .career-focus-grid {
+    grid-template-columns: 1fr;
   }
 
   .hero-card,
-  .contact-box {
+  .profile-card,
+  .contact-box,
+  .contact-card {
     border-radius: 22px;
   }
+}
 
-  .section {
-    padding: 3.3rem 0;
+/* --------------------------------------------------------------------------
+   Reduced motion
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
-  .summary-card,
-  .card {
-    padding: 1.15rem;
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+/* ==========================================================================
+   Certifications & Career Focus — structured premium layout
+   ========================================================================== */
+
+.credential-board {
+  display: grid;
+  gap: 1rem;
+}
+
+.credential-panel {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 1.6rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.credential-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1.6rem;
+  right: 1.6rem;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--gold), var(--accent), transparent);
+}
+
+.credential-panel > * {
+  position: relative;
+}
+
+.credential-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.credential-panel-header h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.08rem;
+  letter-spacing: -0.035em;
+}
+
+.credential-panel-header span {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 0.35rem 0.65rem;
+  background: rgba(176, 141, 87, 0.12);
+  border: 1px solid rgba(176, 141, 87, 0.24);
+  color: var(--gold-dark);
+  font-size: 0.76rem;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.credential-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.completed-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.roadmap-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.credential-pill {
+  display: flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 0.75rem 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.35;
+  box-shadow: 0 8px 22px rgba(20, 20, 20, 0.035);
+}
+
+.roadmap-pill {
+  background: #ffffff;
+}
+
+.career-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  max-width: 930px;
+}
+
+.career-pill {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 0.85rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--text);
+  font-weight: 750;
+  line-height: 1.35;
+  box-shadow: 0 10px 26px rgba(20, 20, 20, 0.045);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+
+.career-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 1000px) {
+  .completed-grid,
+  .roadmap-grid,
+  .career-board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .credential-panel {
+    padding: 1.25rem;
   }
 
-  .focus-item {
-    width: 100%;
-    text-align: center;
+  .credential-panel-header {
+    align-items: flex-start;
+    flex-direction: column;
   }
+
+  .completed-grid,
+  .roadmap-grid,
+  .career-board {
+    grid-template-columns: 1fr;
+  }
+
+  .credential-pill,
+  .career-pill {
+    border-radius: 18px;
+  }
+}
+/* ==========================================================================
+   Career Focus — cleaner structured board
+   ========================================================================== */
+
+#career-focus .section-header {
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.career-board {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  padding: 1.6rem;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow-soft);
+}
+
+.career-board::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1.6rem;
+  right: 1.6rem;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--gold), var(--accent), transparent);
+}
+
+.career-pill {
+  display: flex;
+  align-items: center;
+  min-height: 54px;
+  padding: 0.85rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.35;
+  box-shadow: 0 8px 22px rgba(20, 20, 20, 0.035);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.career-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-accent);
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 1000px) {
+  .career-board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  #career-focus .section-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .career-board {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+
+  .career-pill {
+    border-radius: 18px;
+  }
+}
+/* ==========================================================================
+   Experience section — restore clean premium card layout
+   Fixes compressed text caused by internal grid inside each card
+   ========================================================================== */
+
+#experience .grid-2 {
+  align-items: stretch;
+  gap: 1.25rem;
+}
+
+#experience .experience-card {
+  display: block;
+  padding: 1.55rem;
+  min-height: 100%;
+}
+
+#experience .experience-card h3 {
+  margin-bottom: 0.35rem;
+}
+
+#experience .experience-card .meta {
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+#experience .experience-card p {
+  max-width: none;
+  color: #444444;
+  line-height: 1.62;
+}
+
+#experience .experience-card .bullet-list {
+  margin-top: 1rem;
+  padding-left: 1.1rem;
+}
+
+#experience .experience-card .bullet-list li {
+  color: #424242;
+  line-height: 1.55;
+}
+
+#experience .experience-card .bullet-list li + li {
+  margin-top: 0.55rem;
 }

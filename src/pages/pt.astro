@@ -1,10 +1,117 @@
 ---
-import "../styles/global.css";
+const projects = [
+  {
+    status: "Activo / Projecto Público de Portefólio",
+    title: "Portugal Term Deposit Comparator",
+    description:
+      "Projecto de banking analytics e comparação de produtos financeiros construído com Python, Streamlit e pandas. Compara depósitos a prazo em Portugal por rendimento líquido estimado, prazo, critérios de elegibilidade, condições de liquidez e validação por fontes oficiais.",
+    tags: ["Python", "Streamlit", "Pandas", "Produtos Financeiros", "Rendimento Líquido Estimado", "Validação de Fontes", "Qualidade de Dados", "Banking Analytics"],
+    links: [
+      { label: "GitHub", href: "https://github.com/ricardoserodio/portugal-term-deposit-comparator" },
+      { label: "Live App", href: "https://pt-deposit-comparator.streamlit.app" },
+    ],
+  },
+  {
+    status: "Em Progresso / Caso Público",
+    title: "Financial Modeling Case Study — Millennium bcp",
+    description:
+      "Estudo de análise bancária e financial modeling com dados públicos, focado em demonstrações financeiras, rácios bancários, pressupostos de previsão, análise de cenários, validação de dados e outputs planeados em SQL / Power BI. Projecto educativo de portefólio, sem aconselhamento de investimento.",
+    tags: ["Financial Modeling", "Rácios Bancários", "Dados Públicos", "SQL", "Power BI", "Análise de Cenários", "Validação de Dados"],
+    links: [],
+  },
+  {
+    status: "Em Progresso / Projecto Público de Portefólio",
+    title: "DSTI Calculator — Viabilidade",
+    description:
+      "Projecto de simulação de affordability e DSTI inspirado em processos bancários, focado em literacia financeira, lógica de crédito, validação de inputs, explicabilidade e consciencialização de risco. Simulação educativa, não um sistema de aprovação de crédito.",
+    tags: ["Análise de Crédito", "DSTI", "Affordability", "Literacia Financeira", "Risco", "Validação de Dados", "Explicabilidade"],
+    links: [],
+  },
+  {
+    status: "Em Progresso / Projecto de Aprendizagem",
+    title: "Credit Risk Prediction",
+    description:
+      "Projecto de aprendizagem focado em conceitos de risco de crédito, probabilidade de incumprimento, explainable AI, qualidade de dados, validação de modelos, fairness e governação responsável de modelos. Não destinado a decisões reais de crédito.",
+    tags: ["Risco de Crédito", "Probability of Default", "Validação de Modelos", "Explainable AI", "Qualidade de Dados", "Responsible AI", "Human-in-the-loop"],
+    links: [],
+  },
+];
 
-const linkedinUrl = "https://www.linkedin.com/in/rsbig/";
-const githubUrl = "https://github.com/ricardoserodio";
-const emailUrl = "mailto:contact@ricardoserodio.com";
-const cvUrl = "/cv/ricardo-serodio-cv.pdf";
+const experiences = [
+  {
+    company: "Crédito Agrícola",
+    role: "Assistente Bancário — Banca de Retalho, Crédito e Produtos Financeiros",
+    period: "2025 — Presente",
+    description:
+      "Função de contacto directo com clientes em banca de retalho, abrangendo operações diárias de agência, pedidos de clientes, transacções de caixa, tarefas relacionadas com ATM, procedimentos de cofre e tesouraria, cartões de crédito, crédito ao consumo, processos de crédito hipotecário e não hipotecário, seguros, produtos de poupança e investimento, revisão documental, validação de dados de cliente e workflows bancários regulados.",
+    bullets: [
+      "Apoio a uma ampla variedade de operações bancárias de agência, incluindo pedidos de clientes, transacções de caixa, tarefas relacionadas com ATM, procedimentos de cofre e workflows de tesouraria.",
+      "Contacto com cartões de crédito, crédito ao consumo, crédito hipotecário e não hipotecário, seguros, produtos de poupança e produtos financeiros relacionados com investimento.",
+      "Revisão de documentação de clientes, informação de conta e requisitos operacionais com atenção a AML/KYC, processos de crédito, exactidão e qualidade dos dados de cliente.",
+      "Desenvolvimento de exposição prática a workflows end-to-end de banca de retalho, serviço ao cliente, operações de produtos financeiros, processos de crédito e controlos bancários regulados.",
+    ],
+  },
+  {
+    company: "Banco BiG",
+    role: "Client Manager — Personal Wealth Management",
+    period: "2023 — 2025",
+    description:
+      "Função de contacto directo com clientes em ambiente de investment banking, abrangendo apoio ao aconselhamento de investimento no enquadramento MiFID II, construção de carteiras, alocação de activos, produtos financeiros, gestão de relação com clientes, acompanhamento de mercados, processos de onboarding e workflows regulados de advisory.",
+    bullets: [
+      "Apoio ao aconselhamento de investimento no enquadramento MiFID II, ajudando clientes a alinhar carteiras com perfis de risco, objectivos de investimento e necessidades financeiras.",
+      "Apoio à construção de carteiras e alocação de activos em acções, instrumentos de rendimento fixo e produtos de investimento.",
+      "Gestão e desenvolvimento de relações com clientes num ambiente de personal wealth management, reforçando comunicação, confiança e retenção.",
+      "Acompanhamento de mercados financeiros, produtos de investimento e carteiras de clientes, apoiando discussões informadas e processos de decisão.",
+      "Apoio a processos de onboarding, revisão documental e abertura/configuração de contas com atenção a compliance regulatório e rigor operacional.",
+    ],
+  },
+];
+
+const skillGroups = [
+  {
+    title: "Banca & Finanças",
+    skills: ["Operações de Banca de Retalho", "Wealth Management", "Apoio a Investment Advisory", "Produtos Financeiros", "Produtos de Poupança e Investimento", "Produtos de Seguros"],
+  },
+  {
+    title: "Crédito & Operações de Cliente",
+    skills: ["Cartões de Crédito", "Crédito ao Consumo", "Crédito Habitação", "Processos de Crédito Não Hipotecário", "Pedidos de Clientes", "Workflows de Agência"],
+  },
+  {
+    title: "Dados & Analytics",
+    skills: ["Qualidade de Dados Financeiros", "Validação de Dados de Cliente", "Banking Analytics", "Reporting", "SQL — em progresso", "Power BI / PL-300 — em progresso"],
+  },
+  {
+    title: "Operações & Compliance",
+    skills: ["AML/CFT", "KYC/CDD", "MiFID II", "Revisão Documental", "Workflows Bancários Regulados", "Comunicação com Stakeholders"],
+  },
+  {
+    title: "Ferramentas & Técnica",
+    skills: ["Python for Finance — em progresso", "Portefólio GitHub", "Streamlit", "Pandas", "Projectos com Dados Públicos", "Documentação Markdown"],
+  },
+  {
+    title: "AI Finance / Responsible AI",
+    skills: ["Workflows Financeiros Assistidos por IA", "Consciência de Responsible AI", "Pensamento Human-in-the-loop", "Noções de Validação de Modelos", "Controlos de Qualidade de Dados", "Automação com Consciência de Risco"],
+  },
+];
+
+const completedCertifications = [
+  "Capital Markets & Securities Analyst (CMSA®) — Corporate Finance Institute (CFI)",
+  "Financial Planning & Wealth Management — Corporate Finance Institute (CFI)",
+  "Economics for Capital Markets — Corporate Finance Institute (CFI)",
+  "AML/CFT & Sanctions — PwC Portugal",
+  "MiFID II — Investment Advisory & Information Provision — IFB",
+  "Mortgage Credit Commercialization — IFB",
+  "Insurance Intermediation — Life & Non-Life — DLC / Insurance Training",
+];
+
+const learningRoadmap = [
+  "SQL for Data Analysis — em progresso",
+  "Power BI / PL-300 — em progresso",
+  "Python for Finance — em progresso",
+  "Financial Modelling & Valuation Analyst (FMVA®) — planeado",
+  "Bloomberg Market Concepts (BMC) — planeado",
+  "GitHub Portfolio Development — em curso",
+];
 
 const careerFocus = [
   "Wealth Management / Private Banking Support",
@@ -16,318 +123,63 @@ const careerFocus = [
   "AI Finance Evaluation / AI Product Testing",
   "AML / KYC / Client Onboarding",
 ];
-
-const experience = [
-  {
-    company: "Crédito Agrícola",
-    role: "Banking Assistant – Banca de Retalho, Crédito & Produtos Financeiros",
-    period: "2025 – Presente",
-    description:
-      "Experiência transversal em banca de retalho orientada para cliente, cobrindo operações diárias de balcão, pedidos de clientes, operações de caixa, tarefas relacionadas com ATM, procedimentos de cofre e tesouraria, cartões de crédito, crédito ao consumo, crédito habitação e processos de crédito hipotecário e não hipotecário, seguros, produtos de poupança e investimento, revisão documental, validação de dados de cliente e workflows bancários regulados.",
-    highlights: [
-      "Apoio a uma ampla variedade de operações de banca de retalho e balcão, incluindo pedidos de clientes, operações de caixa, tarefas relacionadas com ATM, procedimentos de cofre e workflows de tesouraria.",
-      "Trabalho com cartões de crédito, crédito ao consumo, crédito habitação, processos de crédito hipotecário e não hipotecário, seguros, produtos de poupança e produtos financeiros relacionados com investimento.",
-      "Revisão de documentação de clientes, informação de conta e requisitos operacionais com atenção a AML/KYC, rigor nos processos de crédito e qualidade dos dados de cliente.",
-      "Desenvolvimento de exposição prática a workflows end-to-end de banca de retalho, serviço ao cliente, operações de produtos financeiros, processos de crédito e controlos bancários regulados.",
-    ],
-  },
-  {
-    company: "Banco BiG",
-    role: "Client Manager – Personal Wealth Management",
-    period: "2023 – 2025",
-    description:
-      "Função orientada para cliente em wealth management num ambiente de banca de investimento, cobrindo investment advisory no enquadramento MiFID II, construção de carteiras, asset allocation, produtos financeiros, gestão de relação com clientes, acompanhamento de mercados, processos de onboarding e workflows regulados de aconselhamento.",
-    highlights: [
-      "Apoio a investment advisory no enquadramento MiFID II, ajudando clientes a alinhar carteiras com perfis de risco, objectivos de investimento e necessidades financeiras.",
-      "Apoio à construção de carteiras e asset allocation em instrumentos de rendimento variável, rendimento fixo e produtos de investimento.",
-      "Gestão e desenvolvimento de relações com clientes em contexto de personal wealth management, reforçando comunicação, confiança e retenção.",
-      "Acompanhamento de mercados financeiros, produtos de investimento e carteiras de clientes, apoiando discussões informadas e processos de decisão de investimento.",
-      "Apoio a processos de onboarding, revisão documental e abertura de conta com atenção a compliance regulatório e rigor operacional.",
-    ],
-  },
-];
-
-const projects = [
-  {
-    name: "Portugal Term Deposit Comparator",
-    status: "Live / Public Portfolio Project",
-    description:
-      "Projecto de banking analytics e comparação de produtos financeiros desenvolvido com Python, Streamlit e pandas. Compara depósitos a prazo em Portugal por rendimento líquido estimado, prazo, critérios de elegibilidade, condições de liquidez e estado de validação por fontes oficiais, incluindo mapeamento de fontes e controlos de qualidade dos dados.",
-    skills: [
-      "Python",
-      "Streamlit",
-      "Pandas",
-      "Produtos Financeiros",
-      "Rendimento Líquido Estimado",
-      "Validação de Fontes",
-      "Controlos de Qualidade",
-      "Banking Analytics",
-    ],
-    github: "https://github.com/ricardoserodio/portugal-term-deposit-comparator",
-    live: "https://pt-deposit-comparator.streamlit.app",
-  },
-  {
-    name: "Financial Modeling Case Study – Millennium bcp",
-    status: "In Progress / Public-data Case Study",
-    description:
-      "Caso de estudo de análise bancária e financial modeling com dados públicos, focado em demonstrações financeiras, rácios bancários, pressupostos de forecast, análise de cenários, validação de dados e outputs planeados em SQL / Power BI. Projecto educativo de portefólio, sem aconselhamento de investimento.",
-    skills: [
-      "Financial Modeling",
-      "Rácios Bancários",
-      "Dados Públicos",
-      "SQL",
-      "Power BI",
-      "Análise de Cenários",
-      "Validação de Dados",
-    ],
-    github: "",
-    live: "",
-  },
-  {
-    name: "DSTI Calculator – Viabilidade",
-    status: "In Progress / Public Portfolio Project",
-    description:
-      "Projecto de simulação de viabilidade financeira e DSTI inspirado em processos bancários, focado em literacia financeira, lógica de processos de crédito, validação de inputs, explicabilidade e consciencialização de risco. Simulação educativa, não um sistema de aprovação de crédito.",
-    skills: [
-      "Análise de Crédito",
-      "DSTI",
-      "Affordability",
-      "Literacia Financeira",
-      "Consciencialização de Risco",
-      "Validação de Dados",
-      "Explicabilidade",
-    ],
-    github: "",
-    live: "",
-  },
-  {
-    name: "Credit Risk Prediction",
-    status: "In Progress / Learning Portfolio Project",
-    description:
-      "Projecto de aprendizagem e portefólio focado em conceitos de risco de crédito, probability of default, explainable AI, qualidade de dados, validação de modelos, fairness e governance responsável de modelos. Não se destina a decisões reais de crédito.",
-    skills: [
-      "Risco de Crédito",
-      "Probability of Default",
-      "Validação de Modelos",
-      "Explainable AI",
-      "Data Quality",
-      "Responsible AI",
-      "Human-in-the-loop",
-    ],
-    github: "",
-    live: "",
-  },
-];
-
-const skills = [
-  {
-    group: "Banca & Finanças",
-    items: [
-      "Operações de Banca de Retalho",
-      "Wealth Management",
-      "Apoio a Investment Advisory",
-      "Produtos Financeiros",
-      "Produtos de Poupança e Investimento",
-      "Produtos de Seguros",
-    ],
-  },
-  {
-    group: "Crédito & Operações de Cliente",
-    items: [
-      "Cartões de Crédito",
-      "Crédito ao Consumo",
-      "Crédito Habitação",
-      "Processos de Crédito Hipotecário e Não Hipotecário",
-      "Pedidos de Clientes",
-      "Workflows de Balcão Bancário",
-    ],
-  },
-  {
-    group: "Dados & Analytics",
-    items: [
-      "Financial Data Quality",
-      "Validação de Dados de Cliente",
-      "Banking Analytics",
-      "Reporting",
-      "SQL em desenvolvimento",
-      "Power BI / PL-300 em desenvolvimento",
-    ],
-  },
-  {
-    group: "Operações & Compliance",
-    items: [
-      "AML/CFT",
-      "KYC/CDD",
-      "MiFID II",
-      "Revisão Documental",
-      "Workflows Bancários Regulados",
-      "Comunicação com Stakeholders",
-    ],
-  },
-  {
-    group: "Ferramentas & Técnico",
-    items: [
-      "Python for Finance em desenvolvimento",
-      "Portefólio GitHub",
-      "Streamlit",
-      "Pandas",
-      "Projectos com Dados Públicos",
-      "Documentação em Markdown",
-    ],
-  },
-  {
-    group: "AI Finance / Responsible AI",
-    items: [
-      "AI-assisted Finance Workflows",
-      "Responsible AI Awareness",
-      "Human-in-the-loop Thinking",
-      "Model Validation Awareness",
-      "Controlos de Qualidade de Dados",
-      "Automação com Consciência de Risco",
-    ],
-  },
-];
-
-const certifications = [
-  {
-    name: "Capital Markets & Securities Analyst (CMSA®)",
-    provider: "Corporate Finance Institute (CFI)",
-    status: "Concluído",
-    url: "/certificates/cmsa-cfi.pdf",
-  },
-  {
-    name: "Financial Planning & Wealth Management",
-    provider: "Corporate Finance Institute (CFI)",
-    status: "Concluído",
-    url: "/certificates/financial-planning-wealth-management-cfi.pdf",
-  },
-  {
-    name: "Economics for Capital Markets",
-    provider: "Corporate Finance Institute (CFI)",
-    status: "Concluído",
-    url: "/certificates/economics-for-capital-markets-cfi.pdf",
-  },
-  {
-    name: "AML/CFT & Sanctions",
-    provider: "PwC Portugal",
-    status: "Concluído",
-    url: "/certificates/aml-cft-sanctions-pwc.pdf",
-  },
-  {
-    name: "MiFID II – Investment Advisory & Information Provision",
-    provider: "IFB",
-    status: "Concluído",
-    url: "/certificates/mifid-ii-ifb.pdf",
-  },
-  {
-    name: "Mortgage Credit Commercialization",
-    provider: "IFB",
-    status: "Concluído",
-    url: "/certificates/mortgage-credit-commercialization-ifb.pdf",
-  },
-  {
-    name: "Insurance Intermediation – Life & Non-Life",
-    provider: "DLC / Insurance Training",
-    status: "Concluído",
-    url: "/certificates/insurance-intermediation.pdf",
-  },
-];
-
-const learningRoadmap = [
-  "SQL for Data Analysis — em desenvolvimento",
-  "Power BI / PL-300 — em desenvolvimento",
-  "Python for Finance — em desenvolvimento",
-  "Financial Modeling & Valuation Analyst (FMVA®) — planeado",
-  "Bloomberg Market Concepts (BMC) — planeado",
-  "GitHub Portfolio Development — contínuo",
-];
-
-const currentYear = new Date().getFullYear();
 ---
 
+<!doctype html>
 <html lang="pt">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Ricardo Serôdio | Operações Bancárias & Financial Data Quality</title>
-    <meta
-      name="description"
-      content="Website profissional de Ricardo Serôdio, focado em operações bancárias, wealth management, financial data quality, banking analytics e AI finance."
-    />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Ricardo Serôdio — portefólio profissional público focado em operações bancárias, wealth management, qualidade de dados financeiros, banking analytics e workflows financeiros assistidos por IA." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ricardo Serôdio | Portefólio Profissional</title>
+    <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
 
   <body>
     <div class="page">
       <header class="header">
-        <nav class="container nav" aria-label="Navegação principal">
+        <nav class="nav">
           <a class="logo" href="/pt">Ricardo Serôdio</a>
 
-          <div class="nav-links">
+          <div class="nav-links" aria-label="Navegação principal">
             <a href="#summary">Resumo</a>
             <a href="#experience">Experiência</a>
             <a href="#projects">Projectos</a>
             <a href="#skills">Skills</a>
             <a href="#certifications">Certificações</a>
             <a href="#contact">Contacto</a>
-            <a class="lang-switch" href="/">PT | EN</a>
+            <a href="/">EN</a>
+            <span>|</span>
+            <a href="/pt">PT</a>
           </div>
         </nav>
       </header>
 
       <main>
         <section class="hero">
-          <div class="container hero-grid">
-            <div>
-              <div class="eyebrow">
-                Portefólio Profissional Público
-              </div>
-
-              <h1 class="hero-title">
-                Ricardo <span>Serôdio</span>
-              </h1>
-
+          <div class="hero-grid">
+            <div class="hero-content">
+              <span class="eyebrow">Portefólio Profissional Público</span>
+              <h1 class="hero-title">Ricardo <span>Serôdio</span></h1>
               <p class="hero-subtitle">
-                Operações Bancárias | Wealth Management | Data Quality | Banking Analytics
+                Operações Bancárias | Wealth Management | Qualidade de Dados | Banking Analytics
               </p>
-
               <p class="location">
-                Olhão, Portugal · Disponível para oportunidades remotas, híbridas e internacionais na Europa e para funções globais remotas seleccionadas.
+                Olhão, Portugal · Disponível para oportunidades remotas, híbridas e internacionais na Europa e funções globais remotas seleccionadas.
               </p>
 
               <div class="hero-actions">
-                <a
-                  class="btn btn-primary"
-                  href={linkedinUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Ver LinkedIn
-                </a>
-
-                <a
-                  class="btn"
-                  href={githubUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Ver GitHub
-                </a>
-
-                <a class="btn" href={cvUrl}>
-                  Descarregar CV
-                </a>
-
-                <a class="btn" href="#projects">
-                  Ver Portefólio
-                </a>
+                <a class="btn btn-primary" href="https://www.linkedin.com/in/rsbig/" target="_blank" rel="noreferrer">Ver LinkedIn</a>
+                <a class="btn" href="https://github.com/ricardoserodio" target="_blank" rel="noreferrer">Ver GitHub</a>
+                <a class="btn" href="/cv/ricardo-serodio-cv.pdf">Download CV</a>
+                <a class="btn" href="#projects">Ver Portefólio</a>
               </div>
             </div>
 
-            <aside class="hero-card" aria-label="Narrativa profissional">
-              <div class="hero-card-title">Narrativa Central</div>
-
+            <aside class="hero-card" aria-label="Narrativa central">
+              <p class="hero-card-title">Narrativa Central</p>
               <ul class="hero-card-list">
-                <li>Experiência em banca</li>
+                <li>Experiência bancária</li>
                 <li>Qualidade de dados financeiros</li>
                 <li>Banking analytics</li>
                 <li>Portefólio público</li>
@@ -337,126 +189,106 @@ const currentYear = new Date().getFullYear();
           </div>
         </section>
 
-        <section id="summary" class="section">
+        <section class="section" id="summary">
           <div class="container">
             <div class="section-header">
               <div>
-                <div class="section-kicker">Resumo Profissional</div>
-                <h2>Experiência em finanças com uma direcção orientada a dados.</h2>
+                <p class="section-kicker">Resumo Profissional</p>
+                <h2>Background financeiro com uma direcção de portefólio orientada por dados.</h2>
               </div>
             </div>
 
             <div class="summary-card">
               <p>
-                Profissional de operações bancárias e wealth management com experiência em serviços financeiros
-                regulados, produtos financeiros, processos de crédito, AML/KYC, MiFID II, revisão documental,
-                comunicação com stakeholders e validação de dados de clientes.
+                Profissional de operações bancárias e wealth management com experiência em serviços financeiros regulados, produtos financeiros, processos de crédito, AML/KYC, MiFID II, revisão documental, comunicação com stakeholders e validação de dados de cliente.
               </p>
-
               <p>
-                A construir um portefólio público que liga experiência bancária prática a financial data quality,
-                banking analytics, SQL, Power BI, Python for Finance e uso responsável de IA em workflows financeiros.
+                A desenvolver um portefólio público que liga experiência bancária prática a qualidade de dados financeiros, banking analytics, SQL, Power BI, Python for Finance e uso responsável de IA em workflows financeiros.
               </p>
             </div>
           </div>
         </section>
 
-        <section id="experience" class="section">
+        <section class="section" id="experience">
           <div class="container">
-            <div class="section-header">
+            <div class="section-header split-header">
               <div>
-                <div class="section-kicker">Experiência</div>
+                <p class="section-kicker">Experiência</p>
                 <h2>Banca e ambientes financeiros regulados.</h2>
               </div>
-
               <p class="section-intro">
-                Experiência em banca de retalho, crédito, produtos financeiros, wealth management,
-                investment advisory, documentação de clientes, workflows regulados e comunicação com stakeholders.
+                Experiência em banca de retalho, crédito, produtos financeiros, wealth management, investment advisory, documentação de clientes, workflows regulados e comunicação com stakeholders.
               </p>
             </div>
 
             <div class="grid grid-2">
-              {experience.map((item) => (
-                <article class="card">
-                  <h3>{item.company}</h3>
-                  <div class="meta">{item.role} · {item.period}</div>
-                  <p>{item.description}</p>
-
-                  <ul class="bullet-list">
-                    {item.highlights.map((highlight) => (
-                      <li>{highlight}</li>
-                    ))}
-                  </ul>
+              {experiences.map((item) => (
+                <article class="card experience-card">
+                  <div>
+                    <h3>{item.company}</h3>
+                    <p class="meta">{item.role} · {item.period}</p>
+                    <p>{item.description}</p>
+                    <ul class="bullet-list">
+                      {item.bullets.map((bullet) => <li>{bullet}</li>)}
+                    </ul>
+                  </div>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="projects" class="section">
+        <section class="section" id="projects">
           <div class="container">
-            <div class="section-header">
+            <div class="section-header split-header">
               <div>
-                <div class="section-kicker">Projectos de Portefólio</div>
-                <h2>Trabalho público que liga finanças, qualidade de dados e analytics.</h2>
+                <p class="section-kicker">Projectos de Portefólio</p>
+                <h2>Trabalho público ligando finanças, qualidade de dados e analytics.</h2>
               </div>
-
               <p class="section-intro">
-                Projectos públicos ou preparados para portefólio, criados para demonstrar conhecimento financeiro
-                prático, análise estruturada, validação de dados e uso responsável de tecnologia em workflows financeiros.
+                Projectos públicos ou preparados para portefólio, desenhados para demonstrar conhecimento financeiro prático, análise estruturada, validação de dados e uso responsável de tecnologia em workflows financeiros.
               </p>
             </div>
 
             <div class="grid grid-2">
               {projects.map((project) => (
-                <article class="card">
-                  <div class="status">{project.status}</div>
-                  <h3>{project.name}</h3>
+                <article class="card project-card">
+                  <span class="status">{project.status}</span>
+                  <h3>{project.title}</h3>
                   <p>{project.description}</p>
 
                   <div class="tags">
-                    {project.skills.map((skill) => (
-                      <span class="tag">{skill}</span>
-                    ))}
+                    {project.tags.map((tag) => <span class="tag">{tag}</span>)}
                   </div>
 
-                  <div class="card-actions">
-                    {project.github && (
-                      <a class="card-link" href={project.github} target="_blank" rel="noreferrer">
-                        GitHub →
-                      </a>
-                    )}
-
-                    {project.live && (
-                      <a class="card-link" href={project.live} target="_blank" rel="noreferrer">
-                        App →
-                      </a>
-                    )}
-                  </div>
+                  {project.links.length > 0 && (
+                    <div class="card-actions">
+                      {project.links.map((link) => (
+                        <a class="card-link" href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
+                      ))}
+                    </div>
+                  )}
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="skills" class="section">
+        <section class="section" id="skills">
           <div class="container">
             <div class="section-header">
               <div>
-                <div class="section-kicker">Skills</div>
+                <p class="section-kicker">Skills</p>
                 <h2>Finanças, operações, qualidade de dados e analytics.</h2>
               </div>
             </div>
 
             <div class="grid grid-3">
-              {skills.map((skillGroup) => (
+              {skillGroups.map((group) => (
                 <article class="card skill-group">
-                  <h3>{skillGroup.group}</h3>
-
+                  <h3>{group.title}</h3>
                   <ul class="skill-list">
-                    {skillGroup.items.map((skill) => (
-                      <li>{skill}</li>
-                    ))}
+                    {group.skills.map((skill) => <li>{skill}</li>)}
                   </ul>
                 </article>
               ))}
@@ -464,112 +296,84 @@ const currentYear = new Date().getFullYear();
           </div>
         </section>
 
-        <section id="certifications" class="section">
+        <section class="section" id="certifications">
           <div class="container">
-            <div class="section-header">
+            <div class="section-header split-header">
               <div>
-                <div class="section-kicker">Certificações & Aprendizagem</div>
-                <h2>
-                  Certificações em mercados financeiros, wealth management, compliance e banking analytics.
-                </h2>
+                <p class="section-kicker">Certificações & Aprendizagem</p>
+                <h2>Certificações em mercados de capitais, wealth management, compliance e banking analytics.</h2>
               </div>
-
               <p class="section-intro">
-                Certificações concluídas e prioridades de aprendizagem seleccionadas para reforçar uma trajectória de
-                carreira em banca, financial research, data quality, business intelligence e AI-assisted finance workflows.
+                Certificações concluídas e prioridades de aprendizagem seleccionadas para apoiar um percurso em banca, financial research, qualidade de dados, business intelligence e workflows financeiros assistidos por IA.
               </p>
             </div>
 
-            <div class="summary-card certifications-block">
-              <h3>Certificações Concluídas</h3>
+            <div class="credential-board">
+              <article class="credential-panel">
+                <div class="credential-panel-header">
+                  <h3>Certificações Concluídas</h3>
+                  <span>{completedCertifications.length} credenciais</span>
+                </div>
 
-              <div class="focus-list">
-                {certifications.map((item) => (
-                  <a
-                    class="focus-item"
-                    href={item.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    title={`${item.name} – ${item.provider}`}
-                  >
-                    {item.name} — {item.provider}
-                  </a>
-                ))}
-              </div>
-            </div>
+                <div class="credential-grid completed-grid">
+                  {completedCertifications.map((item) => (
+                    <div class="credential-pill">{item}</div>
+                  ))}
+                </div>
+              </article>
 
-            <div class="summary-card certifications-block">
-              <h3>Roadmap de Aprendizagem Seleccionado</h3>
+              <article class="credential-panel">
+                <div class="credential-panel-header">
+                  <h3>Roadmap de Aprendizagem Seleccionado</h3>
+                  <span>Prioridades actuais</span>
+                </div>
 
-              <div class="focus-list">
-                {learningRoadmap.map((item) => (
-                  <span class="focus-item">{item}</span>
-                ))}
-              </div>
+                <div class="credential-grid roadmap-grid">
+                  {learningRoadmap.map((item) => (
+                    <div class="credential-pill roadmap-pill">{item}</div>
+                  ))}
+                </div>
+              </article>
             </div>
           </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="career-focus">
           <div class="container">
-            <div class="section-header">
+            <div class="section-header split-header">
               <div>
-                <div class="section-kicker">Foco de Carreira</div>
+                <p class="section-kicker">Foco de Carreira</p>
                 <h2>Oportunidades internacionais em finanças, dados e operações.</h2>
               </div>
-
               <p class="section-intro">
-                Aberto a funções onde experiência bancária, conhecimento de produtos financeiros, consciência de
-                qualidade de dados e pensamento analítico possam apoiar workflows financeiros regulados, data-driven ou
-                assistidos por IA.
+                Aberto a funções onde experiência bancária, conhecimento de produtos financeiros, consciência de qualidade de dados e pensamento analítico possam apoiar workflows financeiros regulados, orientados por dados ou assistidos por IA.
               </p>
             </div>
 
-            <div class="focus-list">
+            <div class="career-board">
               {careerFocus.map((item) => (
-                <span class="focus-item">{item}</span>
+                <div class="career-pill">{item}</div>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="contact" class="section">
+        <section class="section contact-section" id="contact">
           <div class="container">
             <div class="contact-box">
               <div>
-                <div class="section-kicker">Contacto</div>
-                <h2>Vamos falar.</h2>
+                <p class="section-kicker">Contacto</p>
+                <h2>Vamos conectar.</h2>
                 <p>
-                  Baseado em Olhão, Portugal. Disponível para oportunidades remotas, híbridas e internacionais na Europa e para funções globais remotas seleccionadas.
+                  Baseado em Olhão, Portugal. Disponível para oportunidades remotas, híbridas e internacionais na Europa e funções globais remotas seleccionadas.
                 </p>
               </div>
 
               <div class="contact-actions">
-                <a
-                  class="btn"
-                  href={linkedinUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  LinkedIn
-                </a>
-
-                <a
-                  class="btn"
-                  href={githubUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub
-                </a>
-
-                <a class="btn" href={emailUrl}>
-                  Email
-                </a>
-
-                <a class="btn" href={cvUrl}>
-                  CV
-                </a>
+                <a class="btn" href="https://www.linkedin.com/in/rsbig/" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a class="btn" href="https://github.com/ricardoserodio" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="btn" href="mailto:contact@ricardoserodio.com">Email</a>
+                <a class="btn" href="/cv/ricardo-serodio-cv.pdf">CV</a>
               </div>
             </div>
           </div>
@@ -577,9 +381,9 @@ const currentYear = new Date().getFullYear();
       </main>
 
       <footer class="footer">
-        <div class="container footer-inner">
-          <span>© {currentYear} Ricardo Serôdio. Portefólio Profissional.</span>
-          <span>Experiência em banca · Financial data quality · Banking analytics · Portefólio público</span>
+        <div class="footer-inner">
+          <span>© 2026 Ricardo Serôdio. Portefólio Profissional.</span>
+          <span>Experiência bancária · Qualidade de dados financeiros · Banking analytics · Portefólio público</span>
         </div>
       </footer>
     </div>
