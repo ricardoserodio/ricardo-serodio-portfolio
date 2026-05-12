@@ -1,15 +1,15 @@
 export const experience = [
   {
     company: "Crédito Agrícola",
-    role: "Retail Banking Operations",
+    role: "Banking Assistant – Retail Banking, Credit & Financial Products",
     period: "2025 – Present",
     description:
-      "Experience in regulated banking operations, documentation review, financial product processes, client data validation and operational support within a retail banking environment.",
+      "Broad client-facing retail banking role covering day-to-day branch operations, client requests, cash transactions, ATM-related tasks, safe and treasury procedures, credit cards, consumer credit, mortgage and non-mortgage lending processes, insurance products, savings and investment-related financial products, documentation review, client data validation and regulated banking workflows.",
     highlights: [
-      "Supports banking operations in a regulated financial environment.",
-      "Works with documentation, client information and operational banking processes.",
-      "Applies attention to detail, process discipline and data validation awareness.",
-      "Builds practical knowledge across retail banking, credit processes and financial products.",
+      "Supports a wide range of client-facing branch banking operations, including client requests, cash transactions, ATM-related tasks, safe procedures and treasury-related workflows.",
+      "Works across credit cards, consumer credit, mortgage and non-mortgage lending processes, insurance products, savings and investment-related financial products.",
+      "Reviews client documentation, account information and operational requirements with attention to AML/KYC, credit process accuracy and client data quality.",
+      "Develops broad practical exposure to end-to-end retail banking workflows, client service, financial product operations, credit processes and regulated banking controls.",
     ],
   },
   {
