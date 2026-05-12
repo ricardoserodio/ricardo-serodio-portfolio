@@ -904,3 +904,13 @@ p {
     padding: 1.25rem;
   }
 }
+#certifications .section-header,
+#career-focus .section-header {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+#certifications .section-header h2,
+#career-focus .section-header h2 {
+  max-width: 820px;
+}
