@@ -2050,3 +2050,166 @@ a.credential-pill:hover {
     min-height: auto;
   }
 }
+
+/* -------------------------------------------------------
+   Premium Cinematic v2 — Professional timeline treatment
+   ------------------------------------------------------- */
+
+#experience {
+  overflow: hidden;
+}
+
+#experience .section-inner,
+#experience .container {
+  position: relative;
+}
+
+#experience .cards,
+#experience .experience-grid,
+#experience .grid {
+  position: relative;
+}
+
+/* Central timeline line when the experience section uses a two-column grid */
+#experience .experience-grid::before,
+#experience .cards::before {
+  content: "";
+  position: absolute;
+  top: 1.25rem;
+  bottom: 1.25rem;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(96, 165, 250, 0.36),
+    rgba(212, 175, 55, 0.26),
+    transparent
+  );
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.experience-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.45rem;
+  padding: clamp(1.15rem, 2.5vw, 1.55rem);
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.11), transparent 30%),
+    linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.74));
+  box-shadow:
+    0 26px 80px rgba(2, 6, 23, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.experience-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1.25rem;
+  right: 1.25rem;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(212, 175, 55, 0.76),
+    rgba(96, 165, 250, 0.36),
+    transparent
+  );
+}
+
+.experience-card::after {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  right: 1.35rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 999px;
+  background: #60a5fa;
+  box-shadow:
+    0 0 0 6px rgba(96, 165, 250, 0.10),
+    0 0 28px rgba(96, 165, 250, 0.42);
+}
+
+.experience-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(96, 165, 250, 0.32);
+  box-shadow:
+    0 32px 100px rgba(2, 6, 23, 0.48),
+    0 0 0 1px rgba(96, 165, 250, 0.08);
+}
+
+.experience-card .pill,
+.experience-card .tag,
+.experience-card time,
+.experience-card .date,
+.experience-card .period,
+.experience-card .badge-light {
+  border: 1px solid rgba(96, 165, 250, 0.24);
+  color: #bfdbfe;
+  background: rgba(59, 130, 246, 0.12);
+}
+
+.experience-card h3 {
+  margin-top: 0.95rem;
+  color: #ffffff;
+  letter-spacing: -0.025em;
+}
+
+.experience-card h4,
+.experience-card .role,
+.experience-card .subtitle {
+  color: #dbeafe;
+}
+
+.experience-card p {
+  color: #dbeafe;
+}
+
+.experience-card ul {
+  margin-top: 1rem;
+}
+
+.experience-card li {
+  position: relative;
+  color: #cbd5e1;
+  line-height: 1.65;
+}
+
+.experience-card li::marker {
+  color: #60a5fa;
+}
+
+/* Make the current role feel slightly more active without exaggeration */
+.experience-card:first-child {
+  border-color: rgba(96, 165, 250, 0.24);
+}
+
+.experience-card:first-child::after {
+  background: #22c55e;
+  box-shadow:
+    0 0 0 6px rgba(34, 197, 94, 0.12),
+    0 0 28px rgba(34, 197, 94, 0.36);
+}
+
+/* Mobile: no central line, cards remain clean */
+@media (max-width: 900px) {
+  #experience .experience-grid::before,
+  #experience .cards::before {
+    display: none;
+  }
+
+  .experience-card::after {
+    top: 1.25rem;
+    right: 1.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-card,
+  .experience-card:hover {
+    transition: none;
+    transform: none;
+  }
+}
