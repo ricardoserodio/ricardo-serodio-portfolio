@@ -1,0 +1,79 @@
+﻿---
+import AnimatedBackground from "../ui/AnimatedBackground.astro";
+import Badge from "../ui/Badge.astro";
+import PrimaryButton from "../ui/PrimaryButton.astro";
+
+const {
+  content,
+} = Astro.props;
+---
+
+<section class="hero-cinematic" id="top">
+  <AnimatedBackground />
+
+  <div class="hero-cinematic__inner">
+    <div class="hero-cinematic__content">
+      <p class="hero-cinematic__eyebrow">{content.eyebrow}</p>
+
+      <h1>
+        {content.title}
+        <span>{content.highlightedTitle}</span>
+      </h1>
+
+      <p class="hero-cinematic__description">
+        {content.description}
+      </p>
+
+      <p class="hero-cinematic__location">
+        {content.location}
+      </p>
+
+      <div class="hero-cinematic__actions" aria-label="Primary actions">
+        <PrimaryButton
+          href={content.primaryCta.href}
+          label={content.primaryCta.label}
+          variant="primary"
+        />
+
+        <PrimaryButton
+          href={content.secondaryCta.href}
+          label={content.secondaryCta.label}
+          variant="secondary"
+        />
+
+        <PrimaryButton
+          href={content.tertiaryCta.href}
+          label={content.tertiaryCta.label}
+          variant="ghost"
+        />
+      </div>
+
+      <div class="hero-cinematic__badges" aria-label="Professional focus areas">
+        {content.badges.map((badge) => (
+          <Badge label={badge} variant="blue" />
+        ))}
+      </div>
+    </div>
+
+    <aside class="hero-signal-card" aria-label={content.panel.title}>
+      <div class="hero-signal-card__header">
+        <p>{content.panel.title}</p>
+        <span>{content.panel.subtitle}</span>
+      </div>
+
+      <div class="hero-signal-card__body">
+        {content.panel.items.map((item) => (
+          <div class="hero-signal-card__item">
+            <span>{item.label}</span>
+            <strong>{item.value}</strong>
+          </div>
+        ))}
+      </div>
+
+      <div class="hero-signal-card__footer">
+        <span class="signal-dot"></span>
+        <p>Public portfolio • recruiter-ready narrative</p>
+      </div>
+    </aside>
+  </div>
+</section>
