@@ -1,7 +1,5 @@
 ---
-import BaseLayout from "../components/layout/BaseLayout.astro";
-import SiteHeader from "../components/layout/SiteHeader.astro";
-import SiteFooter from "../components/layout/SiteFooter.astro";
+import "../styles/global.css";
 
 const navItems = [
   { label: "Resumo", href: "#summary" },
@@ -208,21 +206,35 @@ const careerFocus = [
 const currentYear = new Date().getFullYear();
 ---
 
-<BaseLayout
-  lang="pt"
-  title="Ricardo Serôdio — Portefólio Profissional"
-  description="Portefólio profissional de Ricardo Serôdio — operações bancárias, wealth management, qualidade de dados financeiros, banking analytics e projectos públicos de finanças."
-  canonical="https://www.ricardoserodio.com/pt/"
->
-  <SiteHeader
-    navItems={navItems}
-    homeHref="/pt"
-    languageHref="/"
-    languageLabel="EN"
-    ariaLabel="Navegação principal"
-  />
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Portefólio profissional de Ricardo Serôdio — operações bancárias, wealth management, qualidade de dados financeiros, banking analytics e projectos públicos de finanças."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ricardo Serôdio — Portefólio Profissional</title>
+  </head>
 
-  <main>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="brand" href="/pt">
+          Ricardo Serôdio
+        </a>
+
+        <div class="nav-links">
+          {navItems.map((item) => (
+            <a href={item.href}>{item.label}</a>
+          ))}
+          <a href="/">EN</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
       <section class="hero">
         <div class="hero-inner hero-grid">
           <div class="hero-content">
@@ -489,5 +501,11 @@ const currentYear = new Date().getFullYear();
       </section>
     </main>
 
-  <SiteFooter lang="pt" />
-</BaseLayout>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>© {currentYear} Ricardo Serôdio. Portefólio profissional.</p>
+        <p>Portefólio público. Não inclui informação confidencial de empregadores ou clientes.</p>
+      </div>
+    </footer>
+  </body>
+</html>

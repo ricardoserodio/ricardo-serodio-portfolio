@@ -1,7 +1,5 @@
 ---
-import BaseLayout from "../components/layout/BaseLayout.astro";
-import SiteHeader from "../components/layout/SiteHeader.astro";
-import SiteFooter from "../components/layout/SiteFooter.astro";
+import "../styles/global.css";
 
 const navItems = [
   { label: "Summary", href: "#summary" },
@@ -205,23 +203,38 @@ const careerFocus = [
   "AI Finance Evaluation",
 ];
 
+const currentYear = new Date().getFullYear();
 ---
 
-<BaseLayout
-  lang="en"
-  title="Ricardo Serôdio — Professional Portfolio"
-  description="Professional portfolio of Ricardo Serôdio — banking operations, wealth management, financial data quality, banking analytics and public finance portfolio projects."
-  canonical="https://www.ricardoserodio.com/"
->
-  <SiteHeader
-    navItems={navItems}
-    homeHref="/"
-    languageHref="/pt"
-    languageLabel="PT"
-    ariaLabel="Main navigation"
-  />
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Professional portfolio of Ricardo Serôdio — banking operations, wealth management, financial data quality, banking analytics and public finance portfolio projects."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ricardo Serôdio — Professional Portfolio</title>
+  </head>
 
-  <main>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="/">
+          Ricardo Serôdio
+        </a>
+
+        <div class="nav-links">
+          {navItems.map((item) => (
+            <a href={item.href}>{item.label}</a>
+          ))}
+          <a href="/pt">PT</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
       <section class="hero">
         <div class="hero-inner hero-grid">
           <div class="hero-content">
@@ -488,5 +501,11 @@ const careerFocus = [
       </section>
     </main>
 
-  <SiteFooter lang="en" />
-</BaseLayout>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>© {currentYear} Ricardo Serôdio. Professional portfolio.</p>
+        <p>Public portfolio only. No confidential employer or client information is included.</p>
+      </div>
+    </footer>
+  </body>
+</html>

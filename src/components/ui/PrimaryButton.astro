@@ -1,0 +1,18 @@
+﻿---
+const {
+  href = "#",
+  label = "",
+  variant = "primary",
+  target = "",
+  rel = "",
+} = Astro.props;
+---
+
+<a
+  class={`button button--${variant}`}
+  href={href}
+  target={target}
+  rel={rel}
+>
+  {label}
+</a>
