@@ -2815,3 +2815,66 @@ body::before {
 #experience .experience-card a:hover {
   color: #f7d77a !important;
 }
+
+/* -------------------------------------------------------
+   Premium Cinematic v2 — Subtle premium particles
+   ------------------------------------------------------- */
+
+.hero-cinematic::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(147, 197, 253, 0.42) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(212, 175, 55, 0.28) 0 1px, transparent 1.5px);
+  background-size:
+    110px 110px,
+    170px 170px;
+  background-position:
+    0 0,
+    44px 72px;
+  opacity: 0.18;
+  mask-image: radial-gradient(circle at 45% 38%, black, transparent 72%);
+  animation: premiumParticlesDrift 48s linear infinite;
+}
+
+section:not(.hero-cinematic)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(147, 197, 253, 0.26) 0 1px, transparent 1.5px);
+  background-size: 150px 150px;
+  background-position: 20px 40px;
+  opacity: 0.08;
+  mask-image: radial-gradient(circle at 50% 20%, black, transparent 70%);
+}
+
+section:not(.hero-cinematic) > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes premiumParticlesDrift {
+  0% {
+    background-position:
+      0 0,
+      44px 72px;
+  }
+
+  100% {
+    background-position:
+      220px 220px,
+      384px 412px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-cinematic::before {
+    animation: none;
+  }
+}
