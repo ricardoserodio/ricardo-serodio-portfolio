@@ -3266,3 +3266,154 @@ section:not(.hero-cinematic) {
     text-decoration: underline;
   }
 }
+
+/* -------------------------------------------------------
+   Premium Cinematic v2 — Mobile final polish
+   ------------------------------------------------------- */
+
+@media (max-width: 760px) {
+  .hero-cinematic {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+
+  .hero-cinematic h1 {
+    font-size: clamp(2.15rem, 11vw, 3.45rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+  }
+
+  .hero-cinematic__description {
+    max-width: 100%;
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .hero-cinematic__location {
+    font-size: 0.86rem;
+  }
+
+  .hero-cinematic__actions {
+    margin-top: 1.5rem;
+  }
+
+  .hero-cinematic__badges {
+    margin-top: 1.5rem;
+  }
+
+  .hero-signal-card {
+    margin-top: 0.75rem;
+    padding: 1rem;
+  }
+
+  .hero-signal-card__item {
+    padding: 0.85rem;
+  }
+
+  section:not(.hero-cinematic) {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .by-the-numbers__intro h2,
+  #summary h2,
+  #experience h2,
+  #projects h2,
+  #skills h2,
+  #certifications h2,
+  #career-focus h2,
+  #contact h2 {
+    font-size: clamp(1.9rem, 9.5vw, 2.65rem);
+    line-height: 1.02;
+    letter-spacing: -0.05em;
+  }
+
+  .stat-card {
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  .stat-card strong {
+    font-size: clamp(2.5rem, 13vw, 3.5rem);
+  }
+
+  .experience-card,
+  .project-card,
+  .skill-card,
+  .credential-panel,
+  .contact-card {
+    padding: 1rem;
+    border-radius: 1.15rem;
+  }
+
+  .experience-card p,
+  .experience-card li,
+  .project-card p,
+  .skill-card p,
+  .credential-note,
+  .contact-card p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .completed-grid,
+  .roadmap-grid,
+  .career-board {
+    gap: 0.7rem;
+  }
+
+  .credential-pill {
+    min-height: auto;
+    padding: 0.85rem;
+  }
+
+  .credential-pill span {
+    font-size: 0.92rem;
+  }
+
+  .career-pill {
+    min-height: auto;
+    padding: 0.85rem;
+  }
+}
+
+/* Make white legacy pills less aggressive on dark mobile/desktop */
+.skill-card li,
+.project-card .project-tags span,
+.project-card .tags span,
+.project-tags span,
+.skill-tags span,
+.project-tags span {
+  border-color: rgba(96, 165, 250, 0.24);
+  color: #dbeafe;
+  background: rgba(59, 130, 246, 0.13);
+}
+
+.skill-card li::before {
+  background: #93c5fd;
+}
+
+/* Keep project links distinct from tags */
+.project-card .project-links a,
+.project-card .links a,
+.project-links a {
+  border-color: rgba(212, 175, 55, 0.24);
+  color: #f7d77a;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+/* Better small-screen header density */
+@media (max-width: 460px) {
+  .nav {
+    align-items: flex-start;
+  }
+
+  .brand {
+    width: 100%;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+    font-size: 0.74rem;
+  }
+}
