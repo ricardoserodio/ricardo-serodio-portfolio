@@ -1,0 +1,106 @@
+﻿---
+const {
+  content,
+} = Astro.props;
+---
+
+<div class="meet-ricardo">
+  <button
+    class="meet-ricardo__button"
+    type="button"
+    data-meet-open
+    aria-haspopup="dialog"
+  >
+    {content.buttonLabel}
+  </button>
+
+  <div
+    class="meet-ricardo__overlay"
+    data-meet-overlay
+    aria-hidden="true"
+  >
+    <section
+      class="meet-ricardo__modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="meet-ricardo-title"
+      tabindex="-1"
+    >
+      <button
+        class="meet-ricardo__close"
+        type="button"
+        data-meet-close
+        aria-label={content.closeLabel}
+      >
+        ×
+      </button>
+
+      <div class="meet-ricardo__header">
+        <p class="section-eyebrow">Professional introduction</p>
+        <h2 id="meet-ricardo-title">{content.title}</h2>
+        <p>{content.subtitle}</p>
+      </div>
+
+      <div class="meet-ricardo__intro">
+        <p>{content.intro}</p>
+      </div>
+
+      <div class="meet-ricardo__sections">
+        {content.sections.map((section) => (
+          <article>
+            <h3>{section.title}</h3>
+            <p>{section.text}</p>
+          </article>
+        ))}
+      </div>
+
+      <div class="meet-ricardo__footer">
+        <a class="button button--primary" href={content.cta.href} data-meet-close>
+          {content.cta.label}
+        </a>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+  const openButtons = document.querySelectorAll("[data-meet-open]");
+  const closeButtons = document.querySelectorAll("[data-meet-close]");
+  const overlay = document.querySelector("[data-meet-overlay]");
+  const modal = document.querySelector(".meet-ricardo__modal");
+
+  function openModal() {
+    if (!overlay || !modal) return;
+
+    overlay.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-is-open");
+    modal.focus();
+  }
+
+  function closeModal() {
+    if (!overlay) return;
+
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-is-open");
+  }
+
+  openButtons.forEach((button) => {
+    button.addEventListener("click", openModal);
+  });
+
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", closeModal);
+  });
+
+  overlay?.addEventListener("click", (event) => {
+    if (event.target === overlay) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeModal();
+    }
+  });
+</script>

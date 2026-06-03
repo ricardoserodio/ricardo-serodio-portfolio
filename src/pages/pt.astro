@@ -4,6 +4,8 @@ import SiteHeader from "../components/layout/SiteHeader.astro";
 import SiteFooter from "../components/layout/SiteFooter.astro";
 import HeroCinematic from "../components/sections/HeroCinematic.astro";
 import ByTheNumbers from "../components/sections/ByTheNumbers.astro";
+import MeetRicardoModal from "../components/sections/MeetRicardoModal.astro";
+import { meetRicardo } from "../data/pt/meetRicardo.js";
 import { stats } from "../data/pt/stats.js";
 import { hero } from "../data/pt/profile.js";
 
@@ -227,7 +229,9 @@ const currentYear = new Date().getFullYear();
   />
 
   <main>
-      <HeroCinematic content={hero} />
+      <HeroCinematic content={hero}>
+        <MeetRicardoModal content={meetRicardo} />
+      </HeroCinematic>
 
       <ByTheNumbers content={stats} />
 

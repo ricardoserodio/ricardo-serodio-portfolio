@@ -41,11 +41,7 @@ const {
           variant="secondary"
         />
 
-        <PrimaryButton
-          href={content.tertiaryCta.href}
-          label={content.tertiaryCta.label}
-          variant="ghost"
-        />
+        <slot />
       </div>
 
       <div class="hero-cinematic__badges" aria-label="Professional focus areas">

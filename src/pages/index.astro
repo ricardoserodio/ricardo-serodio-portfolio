@@ -4,6 +4,8 @@ import SiteHeader from "../components/layout/SiteHeader.astro";
 import SiteFooter from "../components/layout/SiteFooter.astro";
 import HeroCinematic from "../components/sections/HeroCinematic.astro";
 import ByTheNumbers from "../components/sections/ByTheNumbers.astro";
+import MeetRicardoModal from "../components/sections/MeetRicardoModal.astro";
+import { meetRicardo } from "../data/en/meetRicardo.js";
 import { stats } from "../data/en/stats.js";
 import { hero } from "../data/en/profile.js";
 
@@ -226,7 +228,9 @@ const careerFocus = [
   />
 
   <main>
-      <HeroCinematic content={hero} />
+      <HeroCinematic content={hero}>
+        <MeetRicardoModal content={meetRicardo} />
+      </HeroCinematic>
 
       <ByTheNumbers content={stats} />
 
