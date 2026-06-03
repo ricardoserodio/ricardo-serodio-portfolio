@@ -7,8 +7,8 @@
       label: "Anos em wealth management e apoio à consultoria de investimento",
     },
     {
-      value: "2025",
-      label: "Experiência atual em operações bancárias de retalho num ambiente regulado",
+      value: "Atual",
+      label: "Experiência em operações bancárias de retalho num ambiente regulado",
     },
     {
       value: "9",
@@ -20,3 +20,4 @@
     },
   ],
 };
+

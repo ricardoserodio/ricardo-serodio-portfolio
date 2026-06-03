@@ -7,8 +7,8 @@
       label: "Years in wealth management and investment advisory support",
     },
     {
-      value: "2025",
-      label: "Current retail banking operations experience in a regulated environment",
+      value: "Current",
+      label: "Retail banking operations experience in a regulated environment",
     },
     {
       value: "9",
@@ -20,3 +20,4 @@
     },
   ],
 };
+
