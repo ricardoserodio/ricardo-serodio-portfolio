@@ -6,37 +6,87 @@ const {
   title = "Ricardo Serôdio — Professional Portfolio",
   description = "Professional portfolio of Ricardo Serôdio — banking operations, wealth management, financial data quality, banking analytics and public finance portfolio projects.",
   canonical = "https://www.ricardoserodio.com/",
+  image = "https://www.ricardoserodio.com/og-image.svg",
 } = Astro.props;
+
+const isPortuguese = lang === "pt";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  name: title,
+  description,
+  url: canonical,
+  inLanguage: isPortuguese ? "pt-PT" : "en",
+  mainEntity: {
+    "@type": "Person",
+    name: "Ricardo Serôdio",
+    url: "https://www.ricardoserodio.com/",
+    jobTitle: isPortuguese
+      ? "Profissional de banca, wealth management e qualidade de dados financeiros"
+      : "Banking, wealth management and financial data quality professional",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "PT",
+    },
+    knowsAbout: [
+      "Banking Operations",
+      "Wealth Management",
+      "Financial Data Quality",
+      "Banking Analytics",
+      "AML/KYC",
+      "Credit Processes",
+      "Investment Advisory Support",
+      "Fintech Operations",
+      "Responsible Finance Technology"
+    ],
+    sameAs: [
+      "https://www.linkedin.com/in/rsbig/",
+      "https://github.com/ricardoserodio"
+    ]
+  }
+};
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={isPortuguese ? "pt-PT" : "en"}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Ricardo Serôdio" />
+    <meta name="theme-color" content="#020617" />
 
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang="en" href="https://www.ricardoserodio.com/" />
     <link rel="alternate" hreflang="pt-PT" href="https://www.ricardoserodio.com/pt/" />
     <link rel="alternate" hreflang="x-default" href="https://www.ricardoserodio.com/" />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Ricardo Serôdio Professional Portfolio" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content={isPortuguese ? "pt_PT" : "en_US"} />
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
 
-    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
 
   <body>
     <slot />
+
     <script>
       import "../../scripts/reveal-on-scroll.js";
     </script>
   </body>
 </html>
+
