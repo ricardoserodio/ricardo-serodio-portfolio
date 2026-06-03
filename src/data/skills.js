@@ -1,4 +1,4 @@
-export const skills = [
+﻿export const skills = [
   {
     group: "Banking & Finance",
     items: [
@@ -55,9 +55,9 @@ export const skills = [
     ],
   },
   {
-    group: "AI Finance / Responsible AI",
+    group: "Responsible Finance Technology",
     items: [
-      "AI-assisted Finance Workflows",
+      "Responsible finance workflows",
       "Responsible AI Awareness",
       "Human-in-the-loop Thinking",
       "Model Validation Awareness",
@@ -66,3 +66,6 @@ export const skills = [
     ],
   },
 ];
+
+
+

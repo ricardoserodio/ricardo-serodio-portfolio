@@ -1,4 +1,4 @@
-export const projects = [
+﻿export const projects = [
   {
     name: "Portugal Term Deposit Comparator",
     status: "Live / Public Portfolio Project",
@@ -18,7 +18,7 @@ export const projects = [
     live: "https://pt-deposit-comparator.streamlit.app",
   },
   {
-    name: "Financial Modeling Case Study – Millennium bcp",
+    name: "Financial Modeling Case Study â€“ Millennium bcp",
     status: "In Progress / Public-data Case Study",
     description:
       "Public-data banking analysis and financial modeling case study focused on financial statements, banking ratios, forecast assumptions, scenario analysis, data validation and planned SQL / Power BI outputs. Educational portfolio project only, not investment advice.",
@@ -35,7 +35,7 @@ export const projects = [
     live: "",
   },
   {
-    name: "DSTI Calculator – Viabilidade",
+    name: "DSTI Calculator â€“ Viabilidade",
     status: "In Progress / Public Portfolio Project",
     description:
       "Banking-inspired affordability and DSTI simulation project focused on financial literacy, credit process logic, input validation, explainability and risk awareness. Educational simulation only, not a credit approval system.",
@@ -69,3 +69,6 @@ export const projects = [
     live: "",
   },
 ];
+
+
+

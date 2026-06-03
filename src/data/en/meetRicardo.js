@@ -16,7 +16,7 @@
     },
     {
       title: "Professional focus",
-      text: "I am interested in international opportunities across wealth management, banking analytics, financial data quality, AML/KYC, fintech operations and AI-assisted finance workflows.",
+      text: "I am interested in international opportunities across wealth management, banking analytics, financial data quality, AML/KYC, fintech operations and Responsible finance workflows.",
     },
   ],
   cta: {
@@ -24,3 +24,7 @@
     href: "#contact",
   },
 };
+
+
+
+

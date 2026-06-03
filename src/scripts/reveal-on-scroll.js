@@ -24,3 +24,7 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 
   animatedElements.forEach((element) => observer.observe(element));
 }
+
+
+
+

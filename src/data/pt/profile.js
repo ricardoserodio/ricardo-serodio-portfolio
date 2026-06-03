@@ -11,7 +11,7 @@
   },
   secondaryCta: {
     label: "Descarregar CV",
-    href: "/cv/ricardo-serodio-cv-pt.pdf",
+    href: "/cv/ricardo-serodio-cv.pdf",
   },
   tertiaryCta: {
     label: "Meet Ricardo",
@@ -44,5 +44,9 @@
     ],
   },
 };
+
+
+
+
 
 
