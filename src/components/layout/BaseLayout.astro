@@ -1,0 +1,39 @@
+﻿---
+import "../../styles/global.css";
+
+const {
+  lang = "en",
+  title = "Ricardo Serôdio — Professional Portfolio",
+  description = "Professional portfolio of Ricardo Serôdio — banking operations, wealth management, financial data quality, banking analytics and public finance portfolio projects.",
+  canonical = "https://www.ricardoserodio.com/",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href="https://www.ricardoserodio.com/" />
+    <link rel="alternate" hreflang="pt-PT" href="https://www.ricardoserodio.com/pt/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.ricardoserodio.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,24 @@
+﻿---
+const {
+  navItems = [],
+  homeHref = "/",
+  languageHref = "/pt",
+  languageLabel = "PT",
+  ariaLabel = "Main navigation",
+} = Astro.props;
+---
+
+<header class="site-header">
+  <nav class="nav" aria-label={ariaLabel}>
+    <a class="brand" href={homeHref}>
+      Ricardo Serôdio
+    </a>
+
+    <div class="nav-links">
+      {navItems.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+      <a href={languageHref}>{languageLabel}</a>
+    </div>
+  </nav>
+</header>

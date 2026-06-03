@@ -1,0 +1,26 @@
+﻿---
+const {
+  lang = "en",
+  year = new Date().getFullYear(),
+} = Astro.props;
+
+const content = {
+  en: {
+    line1: `© ${year} Ricardo Serôdio. Professional portfolio.`,
+    line2: "Public portfolio. No confidential employer or client information is included.",
+  },
+  pt: {
+    line1: `© ${year} Ricardo Serôdio. Portefólio profissional.`,
+    line2: "Portefólio público. Não inclui informação confidencial de empregadores ou clientes.",
+  },
+};
+
+const footer = content[lang] ?? content.en;
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>{footer.line1}</p>
+    <p>{footer.line2}</p>
+  </div>
+</footer>
