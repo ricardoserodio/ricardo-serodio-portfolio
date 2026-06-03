@@ -1,0 +1,19 @@
+﻿---
+const {
+  label = "",
+  href = "",
+  variant = "default",
+} = Astro.props;
+---
+
+{
+  href ? (
+    <a class={`badge badge--${variant}`} href={href}>
+      {label}
+    </a>
+  ) : (
+    <span class={`badge badge--${variant}`}>
+      {label}
+    </span>
+  )
+}
