@@ -2,6 +2,8 @@
 import BaseLayout from "../components/layout/BaseLayout.astro";
 import SiteHeader from "../components/layout/SiteHeader.astro";
 import SiteFooter from "../components/layout/SiteFooter.astro";
+import HeroCinematic from "../components/sections/HeroCinematic.astro";
+import { hero } from "../data/en/profile.js";
 
 const navItems = [
   { label: "Summary", href: "#summary" },
@@ -222,59 +224,7 @@ const careerFocus = [
   />
 
   <main>
-      <section class="hero">
-        <div class="hero-inner hero-grid">
-          <div class="hero-content">
-            <p class="eyebrow">Banking · Finance · Data Quality</p>
-            <h1 class="hero-title">Ricardo <span>Serôdio</span></h1>
-
-            <p class="hero-subtitle">
-              Finance professional with experience in banking operations, wealth management and regulated financial environments, currently building a public portfolio focused on financial data quality, banking analytics, AI finance and business intelligence.
-            </p>
-
-            <p class="hero-location">
-              Olhão, Portugal · Open to remote, hybrid and international opportunities across Europe.
-            </p>
-
-            <div class="hero-actions">
-              <a
-                class="button button-primary"
-                href="/cv/ricardo-serodio-cv.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Download CV
-              </a>
-              <a
-                class="button button-secondary"
-                href="https://github.com/ricardoserodio"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-              <a
-                class="button button-secondary"
-                href="https://www.linkedin.com/in/rsbig/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-            </div>
-          </div>
-
-          <aside class="hero-card" aria-label="Professional positioning">
-            <p class="eyebrow">Positioning</p>
-            <h2>Banking experience + financial data quality + banking analytics</h2>
-            <ul class="clean-list">
-              {highlights.map((highlight) => (
-                <li>{highlight}</li>
-              ))}
-            </ul>
-          </aside>
-        </div>
-      </section>
+      <HeroCinematic content={hero} />
 
       <section id="summary" class="section">
         <div class="section-inner">
