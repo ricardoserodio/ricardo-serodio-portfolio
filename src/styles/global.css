@@ -3068,3 +3068,201 @@ section:not(.hero-cinematic) > * {
     transform: none;
   }
 }
+
+/* -------------------------------------------------------
+   Premium Cinematic v2 — Accessibility and mobile polish
+   ------------------------------------------------------- */
+
+/* Strong keyboard focus */
+a:focus-visible,
+button:focus-visible,
+.meet-ricardo__modal:focus-visible {
+  outline: 3px solid rgba(96, 165, 250, 0.85);
+  outline-offset: 4px;
+}
+
+/* Avoid hidden focus outlines on dark backgrounds */
+.button:focus-visible,
+.meet-ricardo__button:focus-visible,
+.meet-ricardo__close:focus-visible {
+  box-shadow:
+    0 0 0 4px rgba(96, 165, 250, 0.18),
+    0 0 0 1px rgba(96, 165, 250, 0.70);
+}
+
+/* Better tap targets */
+.nav-links a,
+.button,
+.meet-ricardo__button,
+.meet-ricardo__close,
+.project-links a,
+.certification-links a {
+  min-height: 2.5rem;
+}
+
+/* Prevent horizontal overflow */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Improve section readability */
+section:not(.hero-cinematic) {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* Better container consistency */
+.section-inner,
+.container,
+.by-the-numbers__inner,
+.hero-cinematic__inner {
+  width: min(100%, 1180px);
+}
+
+/* Better header on small screens */
+@media (max-width: 760px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+  }
+
+  .nav {
+    padding: 0.8rem 1rem;
+  }
+
+  .brand {
+    font-size: 0.95rem;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.35rem 0.65rem;
+    font-size: 0.78rem;
+  }
+
+  .nav-links a {
+    min-height: 2rem;
+  }
+}
+
+/* Hero mobile refinement */
+@media (max-width: 760px) {
+  .hero-cinematic {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-cinematic h1 {
+    font-size: clamp(2.35rem, 13vw, 4.1rem);
+    line-height: 0.96;
+  }
+
+  .hero-cinematic__description {
+    font-size: 1rem;
+  }
+
+  .hero-cinematic__badges {
+    gap: 0.5rem;
+  }
+
+  .hero-cinematic__badges .badge {
+    font-size: 0.72rem;
+  }
+
+  .hero-signal-card {
+    width: 100%;
+  }
+}
+
+/* By the numbers mobile polish */
+@media (max-width: 620px) {
+  .by-the-numbers__intro h2 {
+    font-size: clamp(1.9rem, 10vw, 2.8rem);
+  }
+
+  .stat-card strong {
+    font-size: 3rem;
+  }
+}
+
+/* Avoid oversized titles breaking awkwardly */
+@media (max-width: 760px) {
+  section h2 {
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
+  #certifications h2,
+  #career-focus h2,
+  #projects h2,
+  #skills h2,
+  #experience h2 {
+    font-size: clamp(2rem, 10vw, 3.1rem);
+    line-height: 0.98;
+  }
+}
+
+/* Better modal mobile behaviour */
+@media (max-width: 760px) {
+  .meet-ricardo__overlay {
+    align-items: end;
+    padding: 0.75rem;
+  }
+
+  .meet-ricardo__modal {
+    max-height: 86vh;
+    border-radius: 1.25rem;
+  }
+
+  .meet-ricardo__header {
+    padding-right: 2.5rem;
+  }
+
+  .meet-ricardo__header h2 {
+    font-size: clamp(2rem, 12vw, 3.2rem);
+  }
+}
+
+/* Better footer mobile */
+@media (max-width: 760px) {
+  .footer-inner {
+    display: grid;
+    gap: 0.5rem;
+    text-align: left;
+  }
+}
+
+/* Print-friendly fallback */
+@media print {
+  body {
+    background: #ffffff;
+    color: #111827;
+  }
+
+  .site-header,
+  .animated-background,
+  .meet-ricardo,
+  .hero-cinematic::before,
+  body::before {
+    display: none !important;
+  }
+
+  section,
+  .card,
+  .project-card,
+  .experience-card,
+  .skill-card {
+    background: #ffffff !important;
+    color: #111827 !important;
+    box-shadow: none !important;
+  }
+
+  a {
+    color: #111827;
+    text-decoration: underline;
+  }
+}
