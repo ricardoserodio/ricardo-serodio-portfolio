@@ -2213,3 +2213,210 @@ a.credential-pill:hover {
     transform: none;
   }
 }
+
+/* -------------------------------------------------------
+   Premium Cinematic v2 — Project case study cards
+   ------------------------------------------------------- */
+
+#projects {
+  overflow: hidden;
+}
+
+#projects .section-inner,
+#projects .container {
+  position: relative;
+}
+
+#projects .projects-grid,
+#projects .project-grid,
+#projects .cards,
+#projects .grid {
+  align-items: stretch;
+}
+
+.project-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 1.55rem;
+  padding: clamp(1.15rem, 2.6vw, 1.65rem);
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.14), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.08), transparent 28%),
+    linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.72));
+  box-shadow:
+    0 26px 80px rgba(2, 6, 23, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1.25rem;
+  right: 1.25rem;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(212, 175, 55, 0.78),
+    rgba(96, 165, 250, 0.36),
+    transparent
+  );
+  z-index: 1;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -20% -45% 22%;
+  height: 10rem;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.16), transparent 62%);
+  opacity: 0;
+  transition: opacity 180ms ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(96, 165, 250, 0.34);
+  box-shadow:
+    0 34px 110px rgba(2, 6, 23, 0.52),
+    0 0 0 1px rgba(96, 165, 250, 0.08);
+}
+
+.project-card:hover::after {
+  opacity: 1;
+}
+
+.project-card h3 {
+  margin-top: 0.9rem;
+  color: #ffffff;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.project-card p {
+  color: #dbeafe;
+  line-height: 1.65;
+}
+
+.project-card .project-meta,
+.project-card .meta,
+.project-card .status,
+.project-card .pill,
+.project-card .tag,
+.project-card .badge-light {
+  border: 1px solid rgba(96, 165, 250, 0.24);
+  color: #bfdbfe;
+  background: rgba(59, 130, 246, 0.12);
+}
+
+.project-card .status,
+.project-card .pill,
+.project-card .tag,
+.project-card .badge-light {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 0.42rem 0.72rem;
+  font-size: 0.75rem;
+  font-weight: 850;
+  line-height: 1;
+}
+
+.project-card .project-tags,
+.project-card .tags,
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.project-card .project-tags span,
+.project-card .tags span,
+.project-tags span {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 999px;
+  padding: 0.38rem 0.64rem;
+  color: #e0f2fe;
+  background: rgba(2, 6, 23, 0.38);
+  font-size: 0.74rem;
+  font-weight: 750;
+}
+
+.project-card .project-links,
+.project-card .links,
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.15rem;
+}
+
+.project-card .project-links a,
+.project-card .links a,
+.project-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.25rem;
+  border: 1px solid rgba(148, 163, 184, 0.20);
+  border-radius: 999px;
+  padding: 0.58rem 0.85rem;
+  color: #dbeafe;
+  background: rgba(15, 23, 42, 0.62);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.project-card .project-links a:hover,
+.project-card .links a:hover,
+.project-links a:hover {
+  border-color: rgba(212, 175, 55, 0.40);
+  color: #f7d77a;
+  background: rgba(212, 175, 55, 0.10);
+}
+
+/* Make the most complete/public projects feel slightly more prominent */
+#projects .project-card:nth-of-type(1),
+#projects .project-card:nth-of-type(2) {
+  border-color: rgba(96, 165, 250, 0.26);
+}
+
+/* Optional visual label effect for live/public projects */
+.project-card:has(a[href*="streamlit"]),
+.project-card:has(a[href*="github"]) {
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.17), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.09), transparent 28%),
+    linear-gradient(145deg, rgba(15, 23, 42, 0.99), rgba(15, 23, 42, 0.74));
+}
+
+@media (max-width: 760px) {
+  .project-card {
+    border-radius: 1.25rem;
+  }
+
+  .project-card:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-card:hover,
+  .project-card::after {
+    transition: none;
+    transform: none;
+  }
+}
