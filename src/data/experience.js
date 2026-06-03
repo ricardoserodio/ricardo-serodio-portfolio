@@ -1,8 +1,8 @@
 ﻿export const experience = [
   {
-    company: "CrÃ©dito AgrÃ­cola",
-    role: "Banking Assistant â€“ Retail Banking, Credit & Financial Products",
-    period: "2025 â€“ Present",
+    company: "Crédito Agrícola",
+    role: "Banking Assistant – Retail Banking, Credit & Financial Products",
+    period: "2025 – Present",
     description:
       "Broad client-facing retail banking role covering day-to-day branch operations, client requests, cash transactions, ATM-related tasks, safe and treasury procedures, credit cards, consumer credit, mortgage and non-mortgage lending processes, insurance products, savings and investment-related financial products, documentation review, client data validation and regulated banking workflows.",
     highlights: [
@@ -14,8 +14,8 @@
   },
   {
     company: "Banco BiG",
-    role: "Client Manager â€“ Personal Wealth Management",
-    period: "2023 â€“ 2025",
+    role: "Client Manager – Personal Wealth Management",
+    period: "2023 – 2025",
     description:
       "Client-facing wealth management role in an investment banking environment, covering investment advisory under the MiFID II framework, portfolio construction, asset allocation, financial products, client relationship management, market monitoring, onboarding processes and regulated advisory workflows.",
     highlights: [
