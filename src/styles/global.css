@@ -1327,3 +1327,39 @@ p {
     width: 100%;
   }
 }
+
+/* -------------------------------------------------------
+   Premium Cinematic v2 — Hero readability fixes
+   ------------------------------------------------------- */
+
+.hero-cinematic h1 {
+  color: #f8fafc;
+}
+
+.hero-cinematic h1 > span {
+  color: transparent;
+}
+
+.hero-cinematic .button--secondary {
+  color: #e5e7eb;
+}
+
+.hero-cinematic .button--secondary:hover {
+  border-color: rgba(148, 163, 184, 0.44);
+  background: rgba(30, 41, 59, 0.78);
+}
+
+.hero-cinematic .button--ghost:hover {
+  border-color: rgba(212, 175, 55, 0.46);
+  background: rgba(212, 175, 55, 0.12);
+}
+
+.hero-cinematic__inner {
+  min-height: min(760px, calc(100vh - 72px));
+}
+
+@media (max-width: 920px) {
+  .hero-cinematic__inner {
+    min-height: auto;
+  }
+}
