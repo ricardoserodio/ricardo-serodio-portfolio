@@ -1,9 +1,9 @@
 ﻿export const hero = {
   eyebrow: "Banking • Wealth Management • Financial Data Quality",
   title: "Banking professional building a public finance analytics portfolio.",
-  highlightedTitle: "AI-assisted. Human-reviewed. Internationally focused.",
+  highlightedTitle: "Banking experience. Data quality mindset. International focus.",
   description:
-    "I combine regulated banking operations, wealth management experience and financial data quality projects to build a credible public portfolio for banking analytics, AML/KYC, fintech and AI-assisted finance roles.",
+    "I combine regulated banking operations, wealth management experience and financial data quality projects to build a credible public portfolio for banking analytics, AML/KYC, fintech and responsible finance technology roles.",
   location: "Based in Portugal • Open to international and remote opportunities",
   primaryCta: {
     label: "View Projects",
@@ -23,7 +23,7 @@
     "Financial Data Quality",
     "Banking Analytics",
     "AML/KYC",
-    "AI-Assisted Finance",
+    "responsible finance technology",
   ],
   panel: {
     title: "Professional Signal",
@@ -39,8 +39,10 @@
       },
       {
         label: "Operating principle",
-        value: "Human-reviewed outputs",
+        value: "Responsible workflows",
       },
     ],
   },
 };
+
+

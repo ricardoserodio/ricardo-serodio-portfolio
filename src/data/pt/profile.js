@@ -1,9 +1,9 @@
 ﻿export const hero = {
   eyebrow: "Banca • Wealth Management • Qualidade de Dados Financeiros",
   title: "Profissional de banca a construir um portefólio público em analytics financeiro.",
-  highlightedTitle: "Assistido por IA. Revisto por humanos. Focado no mercado internacional.",
+  highlightedTitle: "Experiência bancária. Mentalidade de qualidade de dados. Foco internacional.",
   description:
-    "Combino experiência em operações bancárias, wealth management e projectos de qualidade de dados financeiros para construir um portefólio público credível em banking analytics, AML/KYC, fintech e finanças assistidas por IA.",
+    "Combino experiência em operações bancárias, wealth management e projectos de qualidade de dados financeiros para construir um portefólio público credível em banking analytics, AML/KYC, fintech e tecnologia financeira responsável.",
   location: "Baseado em Portugal • Disponível para oportunidades internacionais e remotas",
   primaryCta: {
     label: "Ver Projectos",
@@ -23,7 +23,7 @@
     "Qualidade de Dados Financeiros",
     "Banking Analytics",
     "AML/KYC",
-    "Finanças Assistidas por IA",
+    "tecnologia financeira responsável",
   ],
   panel: {
     title: "Sinal Profissional",
@@ -39,8 +39,10 @@
       },
       {
         label: "Princípio de trabalho",
-        value: "Outputs revistos por humanos",
+        value: "Workflows responsáveis",
       },
     ],
   },
 };
+
+

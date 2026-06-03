@@ -3,6 +3,8 @@ import BaseLayout from "../components/layout/BaseLayout.astro";
 import SiteHeader from "../components/layout/SiteHeader.astro";
 import SiteFooter from "../components/layout/SiteFooter.astro";
 import HeroCinematic from "../components/sections/HeroCinematic.astro";
+import ByTheNumbers from "../components/sections/ByTheNumbers.astro";
+import { stats } from "../data/en/stats.js";
 import { hero } from "../data/en/profile.js";
 
 const navItems = [
@@ -225,6 +227,8 @@ const careerFocus = [
 
   <main>
       <HeroCinematic content={hero} />
+
+      <ByTheNumbers content={stats} />
 
       <section id="summary" class="section">
         <div class="section-inner">

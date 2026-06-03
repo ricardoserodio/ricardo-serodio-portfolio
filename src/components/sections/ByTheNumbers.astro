@@ -1,0 +1,23 @@
+﻿---
+const {
+  content,
+} = Astro.props;
+---
+
+<section class="by-the-numbers" aria-labelledby="by-the-numbers-title">
+  <div class="by-the-numbers__inner">
+    <div class="by-the-numbers__intro">
+      <p class="section-eyebrow">{content.eyebrow}</p>
+      <h2 id="by-the-numbers-title">{content.title}</h2>
+    </div>
+
+    <div class="by-the-numbers__grid">
+      {content.items.map((item) => (
+        <article class="stat-card">
+          <strong>{item.value}</strong>
+          <p>{item.label}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
