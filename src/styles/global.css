@@ -2771,3 +2771,47 @@ body::before {
     transform: none;
   }
 }
+
+/* -------------------------------------------------------
+   Premium Cinematic v2 — Experience readability hard fix
+   ------------------------------------------------------- */
+
+#experience .experience-card {
+  color: #f8fafc;
+}
+
+#experience .experience-card h3,
+#experience .experience-card h4,
+#experience .experience-card strong {
+  color: #ffffff !important;
+}
+
+#experience .experience-card p,
+#experience .experience-card li,
+#experience .experience-card span,
+#experience .experience-card .role,
+#experience .experience-card .subtitle,
+#experience .experience-card .company,
+#experience .experience-card .location {
+  color: #dbeafe !important;
+}
+
+#experience .experience-card li {
+  opacity: 1 !important;
+}
+
+#experience .experience-card .muted,
+#experience .experience-card small,
+#experience .experience-card time,
+#experience .experience-card .date,
+#experience .experience-card .period {
+  color: #bfdbfe !important;
+}
+
+#experience .experience-card a {
+  color: #93c5fd !important;
+}
+
+#experience .experience-card a:hover {
+  color: #f7d77a !important;
+}
