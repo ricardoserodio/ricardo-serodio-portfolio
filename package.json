@@ -7,12 +7,12 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/security-headers.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.2",
-    "astro": "^6.3.1"
+    "@astrojs/sitemap": "3.7.4",
+    "astro": "7.2.8"
   }
 }

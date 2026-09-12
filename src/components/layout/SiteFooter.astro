@@ -22,6 +22,7 @@ const footer = content[lang] ?? content.en;
   <div class="footer-inner">
     <p>{footer.line1}</p>
     <p>{footer.line2}</p>
+    <a href={lang === "pt" ? "/privacidade" : "/privacy"}>{lang === "pt" ? "Privacidade e cookies" : "Privacy & cookies"}</a>
   </div>
 </footer>
 

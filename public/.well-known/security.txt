@@ -1,0 +1,4 @@
+Contact: mailto:privacy@ricardoserodio.com
+Expires: 2027-03-12T00:00:00Z
+Preferred-Languages: en, pt
+Canonical: https://ricardoserodio.com/.well-known/security.txt
