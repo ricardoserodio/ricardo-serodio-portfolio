@@ -58,6 +58,34 @@ const experience = [
 
 const projects = [
   {
+  "title": "Financial Modeling Case Study – Millennium bcp",
+  "status": "Estudo publicado · 2022–2025 + 1S2026",
+  "description": "Divulgações oficiais ligadas a 182 observações históricas rastreáveis, cálculos Python, análise SQL e visuais Power BI. O estudo revisto explica resultados, qualidade do crédito e cenários ilustrativos, com sensibilidades explícitas de conversão e retenção.",
+  "image": "/images/bcp-h1-2026-dashboard.png",
+  "imageAlt": "Dashboard Power BI do Millennium bcp com indicadores financeiros do 1S2025 e 1S2026",
+  "stack": [
+    "Python",
+    "SQL",
+    "Power BI",
+    "Análise financeira",
+    "Validação de fontes"
+  ],
+  "links": [
+    {
+      "label": "Ler o relatório (PT)",
+      "href": "https://github.com/ricardoserodio/financial-modeling-case-study-bcp/blob/main/reports/bcp_complete_case_study_pt_2026-09-29.pdf"
+    },
+    {
+      "label": "English report",
+      "href": "https://github.com/ricardoserodio/financial-modeling-case-study-bcp/blob/main/reports/bcp_complete_case_study_en_2026-09-29.pdf"
+    },
+    {
+      "label": "Dados e código",
+      "href": "https://github.com/ricardoserodio/financial-modeling-case-study-bcp"
+    }
+  ]
+},
+  {
     title: "Portugal Term Deposit Comparator",
     status: "Projecto público activo",
     description:
@@ -90,14 +118,7 @@ const projects = [
     stack: ["Python", "Análise de dados", "Avaliação de modelos", "Risk analytics"],
     links: [],
   },
-  {
-    title: "Financial Modeling Case Study – Banco Cotado Português",
-    status: "Em progresso",
-    description:
-      "Case study de financial modeling com informação pública, focado num banco cotado português e cobrindo rentabilidade, qualidade de activos, rácios de capital, múltiplos de avaliação e análise de cenários.",
-    stack: ["Financial modeling", "Análise bancária", "Excel", "Dados públicos"],
-    links: [],
-  },
+
 ];
 
 const skillGroups = [
@@ -291,6 +312,11 @@ const currentYear = new Date().getFullYear();
             {projects.map((project) => (
               <article class="card project-card">
                 <div>
+                  {"image" in project && (
+                    <a href={project.links[0].href} target="_blank" rel="noopener noreferrer" class="project-preview">
+                      <img src={project.image} alt={project.imageAlt} width="1778" height="1000" loading="lazy" decoding="async" />
+                    </a>
+                  )}
                   <p class="eyebrow">{project.status}</p>
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
@@ -451,3 +477,9 @@ const currentYear = new Date().getFullYear();
 </BaseLayout>
 
 
+
+<style>
+  .project-preview { display: block; margin-bottom: 1.2rem; border-radius: .65rem; overflow: hidden; background: #fff; }
+  .project-preview img { display: block; width: 100%; height: auto; }
+  .project-preview:focus-visible { outline: 3px solid #60a5fa; outline-offset: 4px; }
+</style>

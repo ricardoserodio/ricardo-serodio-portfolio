@@ -19,9 +19,9 @@
   },
   {
     name: "Financial Modeling Case Study – Millennium bcp",
-    status: "In Progress / Public-data Case Study",
+    status: "Published / Public-source Banking Case Study",
     description:
-      "Public-data banking analysis and financial modeling case study focused on financial statements, banking ratios, forecast assumptions, scenario analysis, data validation and planned SQL / Power BI outputs. Educational portfolio project only, not investment advice.",
+      "Banking analysis covering 2022–2025 and H1 2026, with 182 source-linked historical observations, Python, SQL and Power BI visuals. Revised scenarios include conversion and retention sensitivities. Reports and reproducible code are public. Educational portfolio project, not investment advice.",
     skills: [
       "Financial Modeling",
       "Banking Ratios",
@@ -31,7 +31,7 @@
       "Scenario Analysis",
       "Data Validation",
     ],
-    github: "",
+    github: "https://github.com/ricardoserodio/financial-modeling-case-study-bcp",
     live: "",
   },
   {
