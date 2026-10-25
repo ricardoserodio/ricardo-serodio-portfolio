@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 112" fill="none">
+  <title>Mano de Plata</title>
+  <g fill="#dbe1e2">
+    <path d="M43 10 51 3Q54 0 57 3L64 10V87Q64 90 61 87L43 70Z"/>
+    <path d="M24 27 36 18Q39 16 39 21V68Q39 71 36 68L24 57Z"/>
+    <path d="M69 21Q69 16 73 19L83 27V66L69 79Z"/>
+    <path d="M3 47Q3 42 8 45L31 66Q33 68 33 72V96L8 72Q3 67 3 60Z"/>
+    <path d="M88 41Q88 36 92 39L98 44V67Q98 83 87 93L74 105Q59 118 43 107L37 102V76L57 95Q61 99 65 95L84 77Q88 73 88 67Z"/>
+  </g>
+</svg>
