@@ -1,0 +1,87 @@
+---
+const { projects, lang = 'pt' } = Astro.props;
+const pt = lang === 'pt';
+const copy = pt ? {
+  label: '02 / FINANÇAS & DADOS', title: 'Dados com contexto.\nTrabalho que podes explorar.',
+  intro: 'Do estudo de um banco a uma ferramenta de comparação. Dois projetos públicos onde a experiência financeira se transforma em análise e aplicações.',
+  challenge: 'O desafio', contribution: 'O meu contributo', output: 'O que podes explorar',
+  more: 'Método, fontes e limites', progress: 'Em desenvolvimento', progressIntro: 'As próximas linhas de trabalho, ainda sem uma entrega pública para explorar.',
+  cases: [
+    { name: 'Millennium bcp', type: 'ESTUDO DE CASO · BANKING ANALYTICS', headline: 'Ler os resultados. Explicar o que mudou.',
+      challenge: 'Transformar divulgações financeiras dispersas numa leitura consistente de resultados, qualidade do crédito e cenários.',
+      contribution: 'Estruturei os dados, reconciliei fontes e desenvolvi cálculos em Python, análises SQL e visuais em Power BI.',
+      output: 'Relatórios em português e inglês, dashboard e código com fontes e verificações disponíveis.',
+      stats: [['182', 'observações rastreáveis'], ['2022–25', 'histórico anual'], ['1S2026', 'último período analisado']],
+      steps: ['Divulgações oficiais', 'Reconciliação e cálculos', 'Análise e visuais'],
+      detail: 'O registo histórico reúne 176 valores verificados nas fontes e seis totais recalculados. A revisão de 29/09/2026 inclui cenários ilustrativos e sensibilidades de conversão e retenção. As verificações de cálculo estão disponíveis no repositório.',
+      limit: 'Estudo educativo independente, sem afiliação ao Millennium bcp. Os cenários não são previsões estatísticas nem aconselhamento de investimento.',
+      primary: 'Ler estudo em português', secondary: 'Relatório em inglês', code: 'Dados e código', imageCaption: 'Power BI · análise do primeiro semestre de 2026' },
+    { name: 'Comparador de depósitos', type: 'APLICAÇÃO PÚBLICA · PRODUTOS BANCÁRIOS', headline: 'Comparar para além da taxa anunciada.',
+      challenge: 'Comparar depósitos com prazos, elegibilidade e condições de mobilização diferentes, sem perder de vista o rendimento líquido estimado.',
+      contribution: 'Combinei lógica financeira, filtros e visualização de dados numa aplicação, com referências à documentação oficial dos bancos.',
+      output: 'Simulação por montante e prazo, ranking por juros líquidos estimados, gráficos e exportação dos resultados.',
+      stats: [['Simular', 'montante e prazo'], ['Comparar', 'condições e rendimento'], ['Consultar', 'fontes de cada produto']],
+      steps: ['Definir condições', 'Comparar resultados', 'Consultar a fonte'],
+      detail: 'A aplicação apresenta juros brutos, retenção estimada e juros líquidos. Inclui filtros de elegibilidade e mobilização antecipada, modos simples e avançado e exportações CSV e Excel. O conjunto de dados é mantido manualmente.',
+      limit: 'Estimativas educativas. As condições e a atualidade dos produtos devem ser confirmadas na documentação oficial antes de uma decisão.',
+      primary: 'Experimentar aplicação', code: 'Explorar no GitHub' }
+  ],
+  future: [
+    ['DSTI · Viabilidade', 'Simulação educativa do esforço financeiro, com dados fictícios ou anonimizados. Foco na clareza dos pressupostos e na validação dos dados.'],
+    ['Credit Risk Prediction', 'Exploração de risco de crédito, interpretação de modelos e avaliação responsável. Projeto de aprendizagem, sem aplicação a decisões reais de crédito.']
+  ]
+} : {
+  label: '02 / FINANCE & DATA', title: 'Data with context.\nWork you can explore.',
+  intro: 'From a banking case study to a comparison tool. Two public projects turning financial experience into analysis and applications.',
+  challenge: 'The challenge', contribution: 'My contribution', output: 'What you can explore',
+  more: 'Method, sources and limitations', progress: 'In development', progressIntro: 'The next areas of work, with no public deliverable to explore yet.',
+  cases: [
+    { name: 'Millennium bcp', type: 'CASE STUDY · BANKING ANALYTICS', headline: 'Read the results. Explain what changed.',
+      challenge: 'Turn scattered financial disclosures into a consistent view of earnings, credit quality and scenarios.',
+      contribution: 'I structured the data, reconciled sources and developed Python calculations, SQL analyses and Power BI visuals.',
+      output: 'Portuguese and English reports, a dashboard and code with sources and checks available.',
+      stats: [['182', 'traceable observations'], ['2022–25', 'annual history'], ['H1 2026', 'latest period analysed']],
+      steps: ['Official disclosures', 'Reconciliation and calculations', 'Analysis and visuals'],
+      detail: 'The historical register contains 176 source-verified values and six recalculated totals. The 29 September 2026 revision includes illustrative scenarios and conversion and retention sensitivities. Calculation checks are available in the repository.',
+      limit: 'Independent educational study, not affiliated with Millennium bcp. Scenarios are not statistical forecasts or investment advice.',
+      primary: 'Read the English study', secondary: 'Portuguese report', code: 'Data and code', imageCaption: 'Power BI · first-half 2026 analysis' },
+    { name: 'Term Deposit Comparator', type: 'PUBLIC APPLICATION · BANKING PRODUCTS', headline: 'Compare beyond the headline rate.',
+      challenge: 'Compare deposits with different maturities, eligibility and withdrawal conditions while keeping estimated net returns in view.',
+      contribution: 'I combined financial calculations, filters and data visualisation in an application with references to official bank documentation.',
+      output: 'Amount and maturity simulations, rankings by estimated net interest, charts and results exports.',
+      stats: [['Simulate', 'amount and maturity'], ['Compare', 'conditions and returns'], ['Check', 'each product’s sources']],
+      steps: ['Set conditions', 'Compare results', 'Check the source'],
+      detail: 'The application shows gross interest, estimated withholding tax and net interest. It includes eligibility and early-withdrawal filters, simple and advanced modes and CSV and Excel exports. The dataset is manually maintained.',
+      limit: 'Educational estimates. Product conditions and currency should be checked against official documentation before making a decision.',
+      primary: 'Try the application', code: 'Explore on GitHub' }
+  ],
+  future: [
+    ['DSTI · Affordability', 'Educational affordability simulation using fictitious or anonymised data. Focused on clear assumptions and input validation.'],
+    ['Credit Risk Prediction', 'Exploring credit risk, model interpretation and responsible evaluation. A learning project with no use in real credit decisions.']
+  ]
+};
+---
+<section id="projetos" class="case-section">
+  <p class="section-label">{copy.label}</p>
+  <h2>{copy.title.split('\n').map((line, i) => <>{i > 0 && <br/>}{line}</>)}</h2>
+  <p class="section-description">{copy.intro}</p>
+  <div class="case-list">
+    {copy.cases.map((c, i) => {
+      const p = projects[i];
+      const primary = i === 0 ? p.links.find(l => l.href.includes(pt ? '_pt_' : '_en_')) : p.links[0];
+      const secondary = i === 0 ? p.links.find(l => l.href.includes(pt ? '_en_' : '_pt_')) : null;
+      const code = p.links[p.links.length - 1];
+      return <article class="case-card" aria-labelledby={'case-' + i}>
+        <div class="case-top"><span class="case-index">0{i+1}</span><p>{c.type}</p><span class="case-live">{pt ? 'Disponível' : 'Available'}</span></div>
+        <h3 id={'case-' + i}>{c.name}</h3>
+        <p class="case-headline">{c.headline}</p>
+        {i === 0 && <figure class="case-visual"><a href={primary.href} target="_blank" rel="noopener" aria-label={c.primary}><img src={p.image} alt={p.imageAlt} width="1778" height="1000" loading="lazy"/></a><figcaption>{c.imageCaption}</figcaption></figure>}
+        <dl class:list={['case-stats', { 'case-stats-words': i === 1 }]}>{c.stats.map(([value, label]) => <div><dt>{value}</dt><dd>{label}</dd></div>)}</dl>
+        <dl class="case-story"><div><dt>{copy.challenge}</dt><dd>{c.challenge}</dd></div><div><dt>{copy.contribution}</dt><dd>{c.contribution}</dd></div><div><dt>{copy.output}</dt><dd>{c.output}</dd></div></dl>
+        <div class="case-actions"><a class="case-primary" href={primary.href} target="_blank" rel="noopener">{c.primary} <span aria-hidden="true">↗</span></a><a href={code.href} target="_blank" rel="noopener">{c.code} <span aria-hidden="true">↗</span></a></div>
+        <details class="case-details"><summary>{copy.more}</summary><div class="case-details-body"><ol class="case-flow">{c.steps.map(s => <li>{s}</li>)}</ol><p>{c.detail}</p><div class="tags">{p.stack.map(t => <span>{t}</span>)}</div><p class="case-limit">{c.limit}</p>{secondary && <a class="case-secondary" href={secondary.href} target="_blank" rel="noopener">{c.secondary} ↗</a>}</div></details>
+      </article>;
+    })}
+  </div>
+  <div class="case-upcoming"><h3>{copy.progress}</h3><p>{copy.progressIntro}</p>{copy.future.map(([title, description], i) => <article><span class="case-index">0{i+3}</span><div><h4>{title}</h4><p>{description}</p></div></article>)}</div>
+</section>
