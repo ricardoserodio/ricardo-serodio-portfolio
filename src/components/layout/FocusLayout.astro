@@ -6,7 +6,7 @@ const {
   title = "Ricardo Serôdio — Professional Portfolio",
   description = "Professional portfolio of Ricardo Serôdio — banking operations, wealth management, financial data quality, banking analytics and public finance portfolio projects.",
   canonical = "https://www.ricardoserodio.com/",
-  image = "https://www.ricardoserodio.com/og-image.svg",
+  image = `https://www.ricardoserodio.com/og-image-${lang === "pt" ? "pt" : "en"}.png`,
 } = Astro.props;
 
 const isPortuguese = lang === "pt";
@@ -59,6 +59,8 @@ const structuredData = {
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Ricardo Serôdio" />
     <meta name="theme-color" content="#101e29" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" sizes="any" href="/favicon.ico" />
 
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang="en" href="https://www.ricardoserodio.com/" />
@@ -71,12 +73,17 @@ const structuredData = {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={image} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={isPortuguese ? "Ricardo Serôdio. Finanças e tecnologia." : "Ricardo Serôdio. Finance and technology."} />
     <meta property="og:locale" content={isPortuguese ? "pt_PT" : "en_US"} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
+    <meta name="twitter:image:alt" content={isPortuguese ? "Ricardo Serôdio. Finanças e tecnologia." : "Ricardo Serôdio. Finance and technology."} />
 
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
